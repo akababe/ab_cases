@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import './App.css';
 import Case01 from './components/cases/Case01';
 import Case02 from './components/cases/Case02';
 import Case03 from './components/cases/Case03';
@@ -116,6 +117,33 @@ function App() {
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
   }, [isDarkMode]);
 
+  // Scroll Reveal Observer
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal');
+        }
+      });
+    }, observerOptions);
+
+    // Timeout to ensure DOM is ready after case transition
+    const timer = setTimeout(() => {
+      const sections = document.querySelectorAll('section');
+      sections.forEach((section) => observer.observe(section));
+    }, 100);
+
+    return () => {
+      clearTimeout(timer);
+      observer.disconnect();
+    };
+  }, [activeCaseId]);
+
   const activeCase = cases.find(c => c.id === activeCaseId);
 
   return (
@@ -196,8 +224,8 @@ function App() {
       </aside>
 
       <main className="main-content" role="main">
-        <div className="case-transition-wrapper">
-          {activeCase.component}
+        <div className="case-transition-wrapper" key={activeCaseId}>
+          {activeCase?.component}
         </div>
         <div className="keyboard-hint">
           <kbd>←</kbd> <kbd>→</kbd> or <kbd>k</kbd> <kbd>j</kbd> to navigate · <kbd>Ctrl+D</kbd> for dark mode · <kbd>?</kbd> for help
