@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Case01 from './components/cases/Case01';
 import Case02 from './components/cases/Case02';
 import Case03 from './components/cases/Case03';
@@ -25,19 +25,56 @@ const cases = [
 
 function App() {
   const [activeCaseId, setActiveCaseId] = useState('case01');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const activeCase = cases.find(c => c.id === activeCaseId);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1024) {
+        setIsSidebarOpen(false);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const handleCaseSelect = (id) => {
+    setActiveCaseId(id);
+    setIsSidebarOpen(false);
+  };
+
   return (
     <div className="app-container">
-      <aside className="sidebar">
+      <header className="mobile-topbar">
+        <div>
+          <p className="mobile-topbar-label">Analytics Hub</p>
+          <h2>{activeCase?.title || 'Cases'}</h2>
+        </div>
+        <button
+          type="button"
+          className="mobile-menu-button"
+          aria-expanded={isSidebarOpen}
+          aria-controls="case-navigation"
+          onClick={() => setIsSidebarOpen((open) => !open)}
+        >
+          Menu
+        </button>
+      </header>
+
+      <div className={`sidebar-overlay ${isSidebarOpen ? 'visible' : ''}`} onClick={() => setIsSidebarOpen(false)} />
+
+      <aside className={`sidebar ${isSidebarOpen ? 'open' : ''}`} id="case-navigation">
         <h2>Analytics Hub</h2>
         <ul className="nav-list">
           {cases.map((c) => (
             <li
               key={c.id}
               className={`nav-item ${activeCaseId === c.id ? 'active' : ''}`}
-              onClick={() => setActiveCaseId(c.id)}
+              onClick={() => handleCaseSelect(c.id)}
             >
               {c.title}
             </li>
