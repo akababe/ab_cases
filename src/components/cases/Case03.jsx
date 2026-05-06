@@ -321,327 +321,650 @@
 // export default Case03;
 
 
-const Case03 = () => {
+const Case08 = () => {
   return (
     <div className="case-study">
       <header className="case-header">
-        <span className="case-number">Studi Kasus 03</span>
-        <h1>Sindrom Rak Kosong</h1>
-        <div className="case-meta">Industri: Ritel / Rantai Pasok &bull; Level: Menengah</div>
+        <span className="case-number">Studi Kasus 08</span>
+        <h1>Titik Buta Atribusi</h1>
+        <div className="case-meta">Industri: Media / CPG / Periklanan &bull; Level: Lanjutan</div>
       </header>
+
+      {/* ── SECTION 1 ── */}
       <section>
         <h2>1. Latar Belakang Bisnis</h2>
         <div className="content">
-          <p><strong>FreshMart</strong> adalah jaringan toko kelontong regional dengan 50 lokasi dan pendapatan tahunan $420 juta. Mereka bangga dengan kesegaran "Farm-to-Table" (dari kebun ke meja), khususnya pada produk organik dan produk susu premium. Dalam industri bahan makanan, margin sangat tipis (1–3%), dan profitabilitas sangat bergantung pada <strong>Perputaran Inventaris (Inventory Turnover)</strong> — seberapa cepat barang terjual sebelum rusak atau mengikat modal kerja.</p>
-          <p>FreshMart saat ini menggunakan sistem <strong>Fixed Reorder Point (FRP)</strong>: "Pesan lebih banyak susu saat stok mencapai 10 unit." Pendekatan statis ini dirancang pada tahun 2009 dan belum pernah diperbarui untuk memperhitungkan volatilitas permintaan, acara lokal, atau profil daya tahan barang.</p>
+          <p>
+            <strong>SparkBev</strong> adalah perusahaan minuman global terkemuka. Tahun lalu, mereka menghabiskan{" "}
+            <strong>$120 Juta</strong> untuk pemasaran di berbagai saluran: TV, YouTube, Facebook, Google
+            Search, dan pajangan di dalam toko (In-store displays).
+          </p>
+          <p>
+            Dalam dunia periklanan, "Cawan Suci" (Holy Grail) adalah mengetahui dengan pasti dolar mana yang dihabiskan berujung pada dolar mana yang dihasilkan. Ini adalah domain dari <strong>Pemodelan Bauran Pemasaran (Marketing Mix Modeling - MMM)</strong>.
+          </p>
           <div className="highlight-box">
-            <strong>Pemangku Kepentingan:</strong> Manajer Inventaris, Pembeli Kategori (Produk Segar, Susu, Barang Kering), Manajer Toko, CFO.<br />
-            <strong>Konteks:</strong> FreshMart sedang melawan "pedang bermata dua": limbah (penyusutan) yang tinggi di beberapa toko dan kehabisan stok (stockout) yang konstan di toko lainnya — secara bersamaan. Keduanya adalah gejala dari akar penyebab yang sama: prakiraan permintaan yang mengabaikan variabilitas.<br />
-            <strong>Ketegangan Pemangku Kepentingan:</strong> Pembeli Kategori diukur berdasarkan Margin Kotor — mereka menolak peningkatan stok pengaman karena menahan inventaris tambahan akan mengurangi margin. CFO ingin limbah dikurangi. Manajer Toko ingin rak penuh. Insentif ini tidak selaras, dan analitik harus menyelesaikannya dengan menunjukkan biaya sebenarnya dari setiap mode kegagalan.
+            <strong>Pemangku Kepentingan:</strong> Chief Marketing Officer (CMO), Direktur Keuangan, Manajer Merek.
+            <br />
+            <strong>Konteks:</strong> Saluran digital (Facebook/Google) melaporkan ROAS "Klik-Terakhir" yang tinggi, tetapi total penjualan perusahaan stagnan. CMO mencurigai bahwa platform digital mengambil kredit atas penjualan yang seharusnya tetap terjadi. Direktur Keuangan mengancam akan memotong anggaran pemasaran sebesar $20 juta kecuali ROI dapat dibuktikan secara ilmiah.
           </div>
         </div>
       </section>
+
+      {/* ── SECTION 2 ── */}
       <section>
-        <h2>2. Masalah Bisnis</h2>
+        <h2>2. Krisis Atribusi: Mengupas Lapisan-Lapisan</h2>
         <div className="content">
-          <p>Masalah intinya adalah <strong>Volatilitas Permintaan</strong> yang tidak dapat ditangani oleh sistem Fixed Reorder Point:</p>
-          <ul>
-            <li><strong>Gejala A — Penyusutan (Shrinkage):</strong> Limbah tahunan (kedaluwarsa/tidak terjual) adalah $1,2 juta. 40% dari semua limbah produk segar terjadi pada Senin pagi — hasil langsung dari pemesanan berlebih untuk akhir pekan yang tidak terjual habis.</li>
-            <li><strong>Gejala B — Kehabisan Stok (Stockouts):</strong> Estimasi penjualan yang hilang setiap tahun karena rak kosong: $2,5 juta. Festival lingkungan di dekat Toko #12 menyebabkan lonjakan 300% pada salad "Grab-and-Go" — sistem pusat melewatkannya sepenuhnya.</li>
-            <li><strong>Akar Penyebab:</strong> Sistem FRP menggunakan satu estimasi permintaan tetap per SKU di seluruh jaringan. Sistem ini tidak membedakan antara Toko #3 (perkotaan, lalu lintas pejalan kaki tinggi) dan Toko #47 (pinggiran kota, ramai di akhir pekan). Sistem ini tidak memperhitungkan cuaca, acara lokal, atau pola hari dalam seminggu.</li>
-            <li><strong>Dampak Bisnis Terkuantifikasi:</strong> $1,2 juta penyusutan + $2,5 juta penjualan hilang = <strong>$3,7 juta hambatan tahunan</strong> pada bisnis dengan laba bersih $12,6 juta — mewakili 29% dari total laba yang hilang karena manajemen inventaris yang buruk.</li>
-            <li><strong>Risiko jika Diabaikan:</strong> Pesaing terbesar FreshMart meluncurkan jaminan "Tidak Pernah Kehabisan Stok" kuartal lalu. Jika FreshMart tidak dapat menyamai ketersediaan di rak, peralihan pelanggan akan meningkat. Kehilangan 1% pelanggan di tingkat keranjang = ~$4,2 juta kerugian pendapatan tahunan.</li>
-          </ul>
-        </div>
-      </section>
-      <section>
-        <h2>3. Tujuan Analitik</h2>
-        <div className="content">
-          <p>Beralih dari "Pemesanan Ulang Reaktif" ke <strong>Prakiraan Permintaan Probabilistik (Probabilistic Demand Forecasting)</strong> — memprediksi permintaan per SKU, per toko, per hari, dan menetapkan stok pengaman dinamis yang sesuai.</p>
-          <div className="highlight-box">
-            <strong>Pertanyaan Kunci:</strong>
-            <ol>
-              <li>Berapa tingkat stok pengaman yang optimal per kelas SKU, dengan memperhitungkan variabilitas permintaan DAN waktu tunggu (lead time)?</li>
-              <li>Seberapa besar kontribusi peningkatan 1% dalam Ketersediaan di Rak (OSA) terhadap total nilai keranjang (Efek Halo)?</li>
-              <li>Dapatkah data cuaca memprediksi lonjakan permintaan untuk kategori tertentu (daging BBQ pada hari cerah, sup pada hari hujan)?</li>
-              <li>Apa pemicu penurunan harga (markdown) yang optimal untuk barang tahan lama yang mendekati masa kedaluwarsa, untuk memulihkan margin tanpa melatih pelanggan untuk menunggu diskon?</li>
-            </ol>
-            <strong>Target Hasil:</strong> Mengurangi penyusutan sebesar 30% ($360.000 dihemat) dan mengurangi penjualan yang hilang sebesar 25% ($625.000 dipulihkan) dalam waktu 2 kuartal — total peningkatan tahunan sebesar $985.000.
+          <p>
+            SparkBev menderita karena <strong>"Atribusi yang Terfragmentasi."</strong> Namun, ini sebenarnya menutupi empat masalah yang berbeda. Seorang analis senior tidak memperlakukan mereka sebagai satu masalah — mereka mendiagnosis setiap lapisan secara terpisah.
+          </p>
+
+          <div className="highlight-box" style={{ marginTop: "15px" }}>
+            <strong>LAPISAN 1 — Kejenuhan (Imbal Hasil yang Berkurang)</strong>
+            <p style={{ marginTop: "8px", marginBottom: "8px", fontSize: "14px" }}>
+              Tim pemasaran terus meningkatkan anggaran Facebook, tetapi penjualan inkremental per dolar terus turun. Mereka telah mencapai "Titik Kejenuhan." $5 juta pertama dari pengeluaran Facebook sangat efisien. $5 juta berikutnya kurang efisien. Pada pengeluaran $10 juta ke atas, mereka membuang-buang uang. <em>Sinyal:</em> Pengeluaran meningkat tetapi pendapatan mendatar.
+            </p>
           </div>
+
+          <div className="highlight-box" style={{ marginTop: "15px" }}>
+            <strong>LAPISAN 2 — Bias Atribusi (Kesesatan Klik-Terakhir)</strong>
+            <p style={{ marginTop: "8px", marginBottom: "8px", fontSize: "14px" }}>
+              Jika pelanggan melihat iklan TV, lalu Papan Reklame, lalu akhirnya mengeklik iklan Google Search untuk membeli, Google mengambil 100% kreditnya. Platform digital diberi insentif untuk menunjukkan ROI tinggi. Sementara itu, TV (yang sebenarnya memicu perjalanan pembelian) menjadi benar-benar tidak terlihat. <em>Sinyal:</em> ROAS digital terlihat mencurigakan tinggi (4.0-5.0x) sementara TV terlihat lemah (1.5-2.0x). Ini terbalik.
+            </p>
+          </div>
+
+          <div className="highlight-box" style={{ marginTop: "15px" }}>
+            <strong>LAPISAN 3 — Adstock/Efek Memori (Efek Bawaan)</strong>
+            <p style={{ marginTop: "8px", marginBottom: "8px", fontSize: "14px" }}>
+              Iklan TV yang dilihat pada hari Senin mungkin memengaruhi pembelian pada hari Sabtu. Sebagian besar model digital mengabaikan "Efek Bawaan" ini. Jika Anda tidak memperhitungkannya, Anda membandingkan apel (pengeluaran TV) dengan jeruk (klik segera). <em>Sinyal:</em> Pendapatan tampak tertinggal dari pengeluaran selama 1-2 minggu, terutama untuk TV.
+            </p>
+          </div>
+
+          <div className="highlight-box" style={{ marginTop: "15px" }}>
+            <strong>LAPISAN 4 — Sinergi/Efek Halo (Lintas Saluran)</strong>
+            <p style={{ marginTop: "8px", marginBottom: "8px", fontSize: "14px" }}>
+              Ketika iklan TV ditayangkan, rasio klik-tayang (CTR) pada iklan Search meningkat sebesar 25%. TV "mempersiapkan" (priming) audiens, membuat mereka lebih responsif terhadap Search. Ini berarti mengoptimalkan saluran secara terisolasi itu berbahaya — Anda menghancurkan sinergi tersebut. <em>Sinyal:</em> Performa Search tidak konsisten; ia berkorelasi dengan pengeluaran TV, bukan hanya pengeluaran Search.
+            </p>
+          </div>
+
+          <p style={{ marginTop: "20px" }}>
+            <strong>Masalah Sebenarnya:</strong> CMO, Direktur Keuangan, dan tim Search semuanya memiliki teori yang berbeda tentang apa yang salah karena <strong>mereka masing-masing hanya melihat satu lapisan.</strong> Seorang analis senior memisahkan lapisan-lapisan tersebut, mengukur masing-masing secara independen, kemudian memprioritaskan lapisan mana yang menjadi hambatan terbesar.
+          </p>
         </div>
       </section>
+
+      {/* ── SECTION 3 ── */}
       <section>
-        <h2>4. Perspektif Data</h2>
+        <h2>3. Framework Diagnostik: Uji Sebelum Membangun</h2>
         <div className="content">
-          <p>Empat sumber data diintegrasikan untuk analisis ini:</p>
+          <p>
+            Instingnya adalah membangun model MMM yang besar secara langsung. <strong>Jangan.</strong> Sebaliknya, jalankan pengujian diagnostik yang ditargetkan untuk mengidentifikasi lapisan mana yang sebenarnya menjadi masalah.
+          </p>
+
+          <div className="highlight-box" style={{ marginTop: "15px" }}>
+            <strong>Uji 1: Analisis Jeda (Menguji Lapisan 3 — Adstock)</strong>
+            <p style={{ marginTop: "8px", marginBottom: "8px", fontSize: "13px" }}>
+              Apakah pendapatan mengikuti pengeluaran segera, atau dengan jeda 1-2 minggu? <br />
+              Metode: Korelasi silang pengeluaran vs. pendapatan dari waktu ke waktu. <br />
+              Hasil: Pengeluaran TV memiliki jeda 1 minggu (korelasi 0,8 pada jeda=7 hari). Facebook tidak memiliki jeda (korelasi segera). <br />
+              <em>Implikasi:</em> TV dinilai terlalu rendah karena kita membandingkan pengeluaran minggu N dengan pendapatan minggu N. Kita seharusnya membandingkan pengeluaran TV minggu N dengan pendapatan minggu N+1.
+            </p>
+          </div>
+
+          <div className="highlight-box" style={{ marginTop: "15px" }}>
+            <strong>Uji 2: Pemetaan Kurva Kejenuhan (Menguji Lapisan 1 — Imbal Hasil yang Berkurang)</strong>
+            <p style={{ marginTop: "8px", marginBottom: "8px", fontSize: "13px" }}>
+              Plot pengeluaran vs. pendapatan untuk setiap saluran. Apakah hubungannya terlihat linier atau berbentuk S? <br />
+              Metode: Scatter plot + regresi non-linier (fungsi Hill). <br />
+              Hasil: Facebook jelas berbentuk kurva S (mendatar pada $8 juta+). YouTube masih linier. <br />
+              <em>Implikasi:</em> Facebook jenuh; YouTube belum. Alokasi ulang anggaran akan membantu.
+            </p>
+          </div>
+
+          <div className="highlight-box" style={{ marginTop: "15px" }}>
+            <strong>Uji 3: Cek Bias Platform (Menguji Lapisan 2 — Bias Atribusi)</strong>
+            <p style={{ marginTop: "8px", marginBottom: "8px", fontSize: "13px" }}>
+              Bandingkan ROAS "yang dilaporkan" platform (dari Facebook Ads Manager) vs. korelasi "yang diamati" dalam data Anda. <br />
+              Metode: Penjualan yang dilaporkan platform / pengeluaran yang dilaporkan platform vs. (pendapatan Anda * pangsa platform) / pengeluaran aktual. <br />
+              Hasil: Facebook melaporkan ROAS 4.2x, tetapi data Anda hanya mendukung korelasi 2.5x. Kesenjangan 1.7x adalah bias atribusi. <br />
+              <em>Implikasi:</em> Laporan platform digelembungkan. Gunakan data Anda sendiri, bukan data mereka.
+            </p>
+          </div>
+
+          <div className="highlight-box" style={{ marginTop: "15px" }}>
+            <strong>Uji 4: Cek Sinergi/Halo (Menguji Lapisan 4 — Lintas Saluran)</strong>
+            <p style={{ marginTop: "8px", marginBottom: "8px", fontSize: "13px" }}>
+              Apakah performa Search lebih kuat berkorelasi dengan pengeluaran Search, atau dengan pengeluaran TV? <br />
+              Metode: Regresi pendapatan Search pada pengeluaran Search + pengeluaran TV. Bandingkan koefisiennya. <br />
+              Hasil: Koefisien pengeluaran TV adalah +0,35; koefisien pengeluaran Search adalah +0,28. TV "memungkinkan" Search. <br />
+              <em>Implikasi:</em> Memotong TV akan lebih merugikan Search daripada yang Anda perkirakan. Jangan mengoptimalkan saluran secara terisolasi.
+            </p>
+          </div>
+
+          <p style={{ marginTop: "20px" }}>
+            <strong>Wawasan Utama:</strong> Keempat tes ini memakan waktu 1-2 minggu. Model MMM penuh memakan waktu 2-3 bulan. Tes-tes ini memberi tahu Anda lapisan mana yang paling penting, sehingga Anda dapat <strong>memfokuskan upaya pemodelan Anda pada masalah yang tepat.</strong>
+          </p>
+        </div>
+      </section>
+
+      {/* ── SECTION 4 ── */}
+      <section>
+        <h2>4. Perspektif Data: Apa yang Kita Butuhkan (Dan Apa yang Sebenarnya Kita Dapatkan)</h2>
+        <div className="content">
+          <p>Kami menggunakan data deret waktu mingguan selama 3 tahun. Namun, data dunia nyata itu berantakan. Berikut adalah apa yang kita butuhkan vs. apa yang akan kita dapatkan:</p>
+
           <table className="data-table">
             <thead>
-              <tr><th>Sumber</th><th>Variabel Kunci</th><th>Penggunaan Analitik</th><th>Granularitas</th></tr>
+              <tr>
+                <th>Tipe Variabel</th>
+                <th>Yang Kita Butuhkan</th>
+                <th>Yang Sebenarnya Kita Dapatkan</th>
+                <th>Cara Kita Menanganinya</th>
+              </tr>
             </thead>
             <tbody>
-              <tr><td><strong>Sistem POS</strong></td><td>SKU, Jml, Stempel Waktu, ID Toko, Harga</td><td>Pola permintaan historis</td><td>Tingkat transaksi</td></tr>
-              <tr><td><strong>ERP / WMS</strong></td><td>Waktu Tunggu (hari), Jml Pesanan, Tgl Kedaluwarsa, Biaya Unit</td><td>Kendala pasokan, pelacakan limbah</td><td>Tingkat pesanan</td></tr>
-              <tr><td><strong>API Eksternal</strong></td><td>Suhu, Curah Hujan, Hari Libur, Acara Lokal</td><td>Pendorong permintaan (eksternalitas)</td><td>Harian / Lokasi</td></tr>
-              <tr><td><strong>Program Loyalitas</strong></td><td>ID Pelanggan, Komposisi Keranjang, Frekuensi Kunjungan</td><td>Efek Halo — pengabaian keranjang saat kehabisan stok</td><td>Tingkat transaksi</td></tr>
+              <tr>
+                <td><strong>Target</strong></td>
+                <td>Pendapatan mingguan (definisi konsisten)</td>
+                <td>Pendapatan = (Penjualan - Retur) + (Grosir - Chargeback) [berantakan]</td>
+                <td>Gunakan definisi pendapatan yang konsisten; uji sensitivitas terhadap definisi yang berbeda</td>
+              </tr>
+              <tr>
+                <td><strong>Pengeluaran TV</strong></td>
+                <td>Dolar pasti yang dihabiskan setiap minggu</td>
+                <td>GRP (Gross Rating Points) — bukan dolar. Konversi memerlukan asumsi tentang CPM.</td>
+                <td>Gunakan GRP secara langsung; lebih stabil. Normalisasi di seluruh pasar.</td>
+              </tr>
+              <tr>
+                <td><strong>Pengeluaran Digital</strong></td>
+                <td>Data pengeluaran yang Anda kontrol</td>
+                <td>Pengeluaran yang dilaporkan platform memiliki jendela lookback, jendela atribusi, penundaan rekonsiliasi</td>
+                <td>Gunakan pengeluaran aktual dari laporan bank Anda, bukan laporan platform</td>
+              </tr>
+              <tr>
+                <td><strong>Kontrol</strong></td>
+                <td>Harga, pengeluaran pesaing, musiman</td>
+                <td>Perubahan harga di tengah minggu; pengeluaran pesaing diestimasi; musiman memiliki pencilan (liburan, guncangan pasokan)</td>
+                <td>Dummy-code hari libur; gunakan pengeluaran pesaing dari Nielsen; jeda harga untuk mencerminkan dampak konsumen</td>
+              </tr>
+              <tr>
+                <td><strong>Eksternal</strong></td>
+                <td>Cuaca, indeks ekonomi</td>
+                <td>Cuaca bersifat lokal, bukan nasional. Indeks ekonomi tertinggal 2-3 minggu. Keduanya berisik (noisy).</td>
+                <td>Gunakan rata-rata tertimbang suhu di 10 pasar teratas; gunakan indeks ekonomi yang tertinggal</td>
+              </tr>
             </tbody>
           </table>
-          <p style={{marginTop: '20px'}}><strong>Sampel Data POS — Alpukat Organik (Toko #12, 10 Hari Terakhir):</strong></p>
-          <table className="data-table">
-            <thead>
-              <tr><th>Tanggal</th><th>Hari</th><th>Unit Terjual</th><th>Suhu (°F)</th><th>Stok Awal</th><th>Stok Akhir</th><th>Unit Limbah</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Sen 5/1</td><td>Sen</td><td>18</td><td>62</td><td>95</td><td>77</td><td>0</td></tr>
-              <tr><td>Sel 5/2</td><td>Sel</td><td>22</td><td>65</td><td>77</td><td>55</td><td>0</td></tr>
-              <tr><td>Rab 5/3</td><td>Rab</td><td>25</td><td>68</td><td>55</td><td>30</td><td>0</td></tr>
-              <tr><td>Kam 5/4</td><td>Kam</td><td>28</td><td>72</td><td>80</td><td>52</td><td>0</td></tr>
-              <tr><td>Jum 5/5</td><td>Jum</td><td>45</td><td>78</td><td>52</td><td>7</td><td>0</td></tr>
-              <tr><td>Sab 5/6</td><td>Sab</td><td>62</td><td>82</td><td>120</td><td>58</td><td>0</td></tr>
-              <tr><td>Min 5/7</td><td>Min</td><td>48</td><td>79</td><td>58</td><td>10</td><td>0</td></tr>
-              <tr><td>Sen 5/8</td><td>Sen</td><td>15</td><td>61</td><td>80</td><td>65</td><td>12</td></tr>
-              <tr><td>Sel 5/9</td><td>Sel</td><td>20</td><td>64</td><td>65</td><td>45</td><td>8</td></tr>
-              <tr><td>Rab 5/10</td><td>Rab</td><td>23</td><td>67</td><td>45</td><td>22</td><td>0</td></tr>
-            </tbody>
-          </table>
-          <div className="highlight-box" style={{marginTop: '15px'}}>
-            <strong>Apa yang Segera Diungkapkan Data:</strong> Permintaan hari Jumat dan Sabtu (45–62 unit) adalah 2–4x lebih tinggi daripada hari Senin (15–18 unit). Namun pesanan yang dibuat hari Jumat untuk pengiriman hari Senin kelebihan stok ~65 unit, menyebabkan 12–20 unit limbah setiap hari Senin. Ini adalah "Puncak Limbah Hari Senin" dalam bentuk data mentah.
-          </div>
-          <div className="highlight-box" style={{marginTop: '15px'}}>
-            <strong>Batasan Data:</strong>
+
+          <div className="highlight-box" style={{ marginTop: "20px" }}>
+            <strong>Masalah Kualitas Data (Transparan):</strong>
             <ul>
-              <li><strong>Hilang:</strong> Data "Penyesalan" — kita bisa melihat apa yang terjual, bukan berapa banyak pelanggan yang pergi ketika rak kosong (kritis untuk estimasi permintaan yang sebenarnya).</li>
-              <li><strong>Hilang:</strong> Varians waktu tunggu pemasok — ERP mencatat waktu tunggu rata-rata (2 hari) tetapi bukan distribusinya (1–5 hari). Ini menyebabkan perkiraan rendah yang sistematis pada stok pengaman yang diperlukan.</li>
-              <li><strong>Variabel Tersembunyi:</strong> Iklim mikro cuaca tingkat toko — toko yang berjarak 2 mil dari yang lain bisa memiliki permintaan yang digerakkan oleh cuaca yang sangat berbeda.</li>
+              <li>
+                <strong>Jeda rekonsiliasi:</strong> Pengeluaran Facebook baru terekonsiliasi 2 minggu setelah kampanye berjalan.
+                Kami menggunakan data awal dan menyesuaikannya nanti.
+              </li>
+              <li>
+                <strong>Ketidakcocokan jendela atribusi:</strong> Facebook menggunakan jendela 28 hari; Google menggunakan 30 hari.
+                Kami menormalisasi ke jendela 30 hari.
+              </li>
+              <li>
+                <strong>Kanibalisasi:</strong> Kami tidak memiliki data tingkat rumah tangga untuk mengetahui apakah pelanggan Facebook dan Search adalah orang yang sama. Kami mengasumsikan adanya tumpang tindih (~20% berdasarkan tolok ukur industri) dan menguji sensitivitasnya.
+              </li>
+              <li>
+                <strong>Faktor di luar model:</strong> Acara PR, peluncuran produk, kampanye influencer tidak ada dalam dataset kami. Kami akan melihat varians yang tidak dapat dijelaskan, yang akan kami tandai.
+              </li>
             </ul>
           </div>
         </div>
       </section>
+
+      {/* ── SECTION 5 ── */}
       <section>
-        <h2>5. Langkah demi Langkah Berpikir Analitik</h2>
+        <h2>5. Pendekatan Analitik: Mengapa Tidak Membangun MMM Saja?</h2>
         <div className="content">
-          <p>Pendekatan analis mengikuti urutan prioritas yang ketat — <strong>klasifikasikan sebelum menghitung</strong>:</p>
-          <ol>
-            <li><strong>Langkah 1 — Klasifikasi ABC (Prioritaskan Tempat Fokus):</strong> Tidak semua SKU layak mendapatkan perhatian analitik yang sama. Kami mengklasifikasikan berdasarkan volume penjualan × dampak margin:
-              <div className="calculation" style={{margin: '15px 0'}}>
-{`Kerangka Kerja Klasifikasi ABC:
-─────────────────────────────────────────────────────────────────
-Kelas │ Kriteria                    │ % SKU  │ % Pendapatan │ Target OSA
-──────┼─────────────────────────────┼────────┼──────────────┼──────────
-  A   │ 10% SKU Teratas (Vol×Margin)│  10%  │   65%        │  98,5%
-  B   │ 20% SKU Berikutnya          │  20%  │   25%        │  95,0%
-  C   │ 70% SKU Terbawah            │  70%  │   10%        │  85,0%
-─────────────────────────────────────────────────────────────────
-Contoh:
-Kelas A: Susu Full Cream 1L, Telur Organik 12btr, Roti Sourdough
-Kelas B: Yogurt Yunani 500g, Keju Blok 400g
-Kelas C: Tahini Spesial, Bubuk Kunyit Organik
-Aturan Prioritas: Kami hanya membangun model stok pengaman 
-probabilistik untuk SKU Kelas A terlebih dahulu. Kelas C dapat 
-menggunakan FRP sederhana — ROI analitik tidak membenarkan kompleksitas.`}
-              </div>
+          <p>
+            Ini adalah pertanyaan kritis yang akan diajukan CFO: <em>"Mengapa kita butuh beberapa tes? Mengapa tidak membangun modelnya saja?"</em>
+          </p>
+
+          <p style={{ marginTop: "15px" }}>
+            <strong>Masalah dengan "Satu Model Besar":</strong> Jika Anda memasukkan semua lapisan ke dalam satu MMM, Anda membuat asumsi tentang keempatnya secara bersamaan:
+          </p>
+
+          <ul style={{ marginTop: "15px" }}>
+            <li>
+              "Hubungannya berbentuk kurva S" (mengasumsikan kejenuhan itu nyata)
             </li>
-            <li><strong>Langkah 2 — Dekomposisi Permintaan ke dalam Komponen:</strong> Sebelum meramal, pahami apa yang mendorong permintaan:
-              <ul>
-                <li><strong>Permintaan Dasar:</strong> Penjualan harian rata-rata (Senin sampai Minggu secara terpisah — BUKAN rata-rata mingguan)</li>
-                <li><strong>Tren:</strong> Apakah SKU ini tumbuh atau menurun dari tahun ke tahun (YoY)? (Alpukat organik: +18% pertumbuhan YoY)</li>
-                <li><strong>Musiman:</strong> Premium akhir pekan (Jum/Sab = 2,8x hari kerja untuk produk segar)</li>
-                <li><strong>Kejutan Eksternal:</strong> Suhu >75°F → +35% permintaan BBQ/produk segar. Hari libur umum → +60% keseluruhan, -40% hari setelahnya.</li>
-              </ul>
+            <li>
+              "Pengeluaran memiliki jeda 1 minggu" (mengasumsikan adstock)
             </li>
-            <li><strong>Langkah 3 — Modelkan Waktu Tunggu sebagai Distribusi, Bukan Angka Tetap:</strong> FRP mengasumsikan waktu tunggu = 2 hari (konstan). Data waktu tunggu nyata menunjukkan:
-              <div className="calculation" style={{margin: '15px 0'}}>
-{`Distribusi Waktu Tunggu (Pemasok alpukat, 90 pesanan terakhir):
-1 hari:  12% pesanan
-2 hari:  55% pesanan  ← asumsi FRP saat ini
-3 hari:  25% pesanan
-4 hari:  6% pesanan
-5 hari:  2% pesanan
-Rata-rata Waktu Tunggu (μLT) = 2,21 hari
-StdDev Waktu Tunggu (σLT) = 0,82 hari
-Mengabaikan varians ini adalah alasan mengapa rumus
-sederhana memberi kita 12 unit stok pengaman ketika
-kita sebenarnya butuh 35.`}
-              </div>
+            <li>
+              "Saluran berinteraksi secara multiplikatif" (mengasumsikan sinergi)
             </li>
-            <li><strong>Langkah 4 — Hitung Stok Pengaman Sebenarnya (Rumus Diperluas):</strong> FRP menggunakan rumus dasar. Rumus yang benar memperhitungkan variabilitas permintaan DAN waktu tunggu.</li>
-            <li><strong>Langkah 5 — Analisis Efek Halo (Dampak Tingkat Keranjang):</strong> Menggunakan data loyalitas, kuantifikasi biaya sebenarnya dari kehabisan stok:
-              <ul>
-                <li>Ketika "Alpukat Organik" kehabisan stok, 15% pelanggan meninggalkan <strong>seluruh keranjang</strong> mereka (rata-rata nilai keranjang: $85)</li>
-                <li>Biaya kehabisan stok yang sebenarnya adalah <em>nilai keranjang</em>, bukan harga barang</li>
-                <li>Ini mengubah keputusan stok pengaman secara signifikan: menahan 10 alpukat ekstra ($18) sepadan untuk mencegah bahkan 1 pengabaian keranjang ($85)</li>
-              </ul>
+            <li>
+              "Data platform tidak bias" (mengasumsikan tidak ada bias atribusi)
             </li>
-            <li><strong>Langkah 6 — Rancang Pemicu Penurunan Harga Dinamis:</strong> Untuk produk segar Kelas A yang mendekati kedaluwarsa, rancang jadwal penurunan harga otomatis untuk memulihkan margin daripada membuang:
-              <ul>
-                <li>48 jam menuju kedaluwarsa + >30% stok tersisa → diskon 20% (hanya anggota aplikasi/loyalitas)</li>
-                <li>24 jam menuju kedaluwarsa + >20% stok tersisa → diskon 35% (tanda di dalam toko)</li>
-                <li>12 jam menuju kedaluwarsa + sisa apa pun → diskon 50% atau donasikan ke bank makanan (kredit ESG)</li>
-              </ul>
-            </li>
-          </ol>
+          </ul>
+
+          <p style={{ marginTop: "15px" }}>
+            Jika SALAH SATU dari asumsi ini salah, seluruh model Anda salah. Anda tidak akan tahu yang mana yang rusak.
+          </p>
+
+          <p style={{ marginTop: "15px" }}>
+            <strong>Pendekatan Bertahap:</strong>
+          </p>
+
+          <div className="calculation" style={{ margin: "15px 0" }}>
+{`TAHAP 1 — Diagnostik (Minggu 1-2):
+Jalankan keempat tes secara independen.
+Tanya: "Lapisan mana yang merupakan masalah NYATA?"
+Output: Laporan diagnostik (lapisan mana yang penting)
+
+TAHAP 2 — Inferensi Kausal (Minggu 3-4):
+Bangun model Deret Waktu Struktural Bayesian (BSTS).
+Mengapa BSTS? Ia secara eksplisit mengukur: "Bagaimana jika kita menghabiskan $0 pada saluran ini?"
+Ini mengisolasi dampak SEBAB-AKIBAT, bukan sekadar korelasi.
+Output: ROAS inkremental sejati per saluran (bukan ROAS yang dilaporkan platform)
+
+TAHAP 3 — Optimasi (Minggu 5-6):
+Mengingat ROAS sejati dan kurva kejenuhan, optimalkan alokasi anggaran.
+Jalankan analisis sensitivitas: "Bagaimana jika estimasi kejenuhan kita meleset 20%?"
+Output: Rekomendasi alokasi anggaran + interval kepercayaan`}
+          </div>
+
+          <p style={{ marginTop: "15px" }}>
+            <strong>Mengapa Ini Penting:</strong> Jika Tahap 1 menunjukkan bahwa Lapisan 3 (adstock) dan Lapisan 4 (sinergi) tidak signifikan, kita tidak perlu membangun model kompleks untuk mereka. Kita sederhanakan. Jika Tahap 1 menunjukkan Lapisan 1 (kejenuhan) adalah masalah dominan, kita fokus di sana. Ini efisien.
+          </p>
         </div>
       </section>
+
+      {/* ── SECTION 6 ── */}
       <section>
-        <h2>6. Perhitungan &amp; Simulasi</h2>
+        <h2>6. Hasil Diagnostik Tahap 1</h2>
         <div className="content">
-          <p>Perhitungan Stok Pengaman: <strong>Rumus Diperluas vs. Rumus Sederhana</strong></p>
-          <div className="calculation">
-{`Item: Daging Ribeye Organik (SKU Kelas A)
-Rata-rata Permintaan Harian (μD): 20 unit
-StdDev Permintaan (σD): 5 unit
-Rata-rata Waktu Tunggu (μLT): 2 hari
-StdDev Waktu Tunggu (σLT): 0,82 hari
-Target Tingkat Layanan: 95% → Skor-Z = 1,645
-RUMUS SEDERHANA (apa yang FreshMart gunakan saat ini):
-SS_sederhana = Z × σD × √μLT
-SS_sederhana = 1,645 × 5 × √2 = 1,645 × 5 × 1,414 = `}<span className="math-result">11,6 → 12 unit</span>
-{`
-RUMUS DIPERLUAS (memperhitungkan variabilitas waktu tunggu):
-SS_diperluas = Z × √((σD² × μLT) + (μD² × σLT²))
-SS_diperluas = 1,645 × √((25 × 2) + (400 × 0,672))
-            = 1,645 × √(50 + 268,8)
-            = 1,645 × √318,8
-            = 1,645 × 17,86 = `}<span className="math-result">29,4 → 30 unit</span>
-{`
-Kesenjangan: 30 - 12 = 18 unit stok pengaman yang kurang diperhitungkan!
-Dengan biaya $12/unit: peningkatan biaya penyimpanan = $216/SKU/siklus
-vs. biaya kehabisan stok ($85 keranjang × 15% pengabaian × rata-rata 3 kejadian kehabisan stok/bulan) = `}<span className="math-result">$38,25/kejadian</span>
-{`
-Keputusan: Stok pengaman ekstra MEMBAYAR dirinya sendiri dengan mudah.
-─────────────────────────────────────────────────────────────────
-PERHITUNGAN EFEK HALO — Biaya Kehabisan Stok Sebenarnya
-─────────────────────────────────────────────────────────────────
-Item: Daging Ribeye Organik
-Harga Item: $25
-Rata-rata Nilai Keranjang saat membeli daging: $120
-Frekuensi Kehabisan Stok: ~1,5 hari/bulan (5% hari)
-Unit hilang per hari kehabisan stok: 20 unit
-Kerugian tanpa Efek Halo (langsung):
-20 unit × $25 × 1,5 hari = $750/bulan
-Kerugian DENGAN Efek Halo (15% pengabaian keranjang):
-$750 + (15% × 20 × $120 × 1,5) = $750 + $540 = `}<span className="math-result">$1.290/bulan</span>
-{`
-Biaya pengabaian keranjang tersembunyi ($540) hampir
-sebesar penjualan langsung yang hilang ($750).
-Ini benar-benar mengubah kasus bisnis stok pengaman.
-─────────────────────────────────────────────────────────────────
-SENSITIVITAS: Bagaimana jika tingkat pengabaian hanya 8% (konservatif)?
-─────────────────────────────────────────────────────────────────
-$750 + (8% × 20 × $120 × 1,5) = $750 + $288 = `}<span className="math-result">$1.038/bulan</span>
-{`Masih 38% lebih tinggi dari estimasi tanpa-halo.
-Kasus bisnis untuk stok pengaman yang lebih tinggi berlaku dalam semua skenario.`}
+          <p>
+            Kami menjalankan empat tes diagnostik. Inilah yang kami temukan dan apa artinya bagi bisnis.
+          </p>
+
+          <div className="highlight-box" style={{ marginTop: "15px" }}>
+            <strong>Hasil Uji 1: Analisis Jeda</strong>
+            <p style={{ marginTop: "8px", marginBottom: "8px", fontSize: "14px" }}>
+              <strong>Temuan:</strong> TV memiliki jeda 1 minggu. Facebook dan YouTube tidak memiliki jeda.
+            </p>
+            <p style={{ marginTop: "8px", marginBottom: "8px", fontSize: "13px" }}>
+              <strong>Implikasi:</strong> Kita perlu memperhitungkan adstock. Namun, itu tidak serumit yang diasumsikan beberapa model MMM. Peluruhan 1 minggu yang sederhana sudah cukup.
+            </p>
+          </div>
+
+          <div className="highlight-box" style={{ marginTop: "15px" }}>
+            <strong>Hasil Uji 2: Kurva Kejenuhan</strong>
+            <p style={{ marginTop: "8px", marginBottom: "8px", fontSize: "14px" }}>
+              <strong>Temuan:</strong> Facebook menunjukkan kejenuhan kurva S yang jelas di atas $8 juta/bulan. YouTube masih linier. TV sedikit berbentuk kurva S tetapi dengan titik kejenuhan yang lebih tinggi ($15 juta).
+            </p>
+            <p style={{ marginTop: "8px", marginBottom: "8px", fontSize: "13px" }}>
+              <strong>Implikasi:</strong> Ini adalah masalah dominan. Kita tidak bisa hanya mengalokasikan anggaran secara proporsional. Kita perlu menghormati kurva kejenuhan. Uang Facebook lebih baik dihabiskan untuk YouTube.
+            </p>
+          </div>
+
+          <div className="highlight-box" style={{ marginTop: "15px" }}>
+            <strong>Hasil Uji 3: Cek Bias Platform</strong>
+            <div style={{ margin: "10px 0" }}>
+              <p style={{ fontSize: "13px", marginBottom: "8px" }}>
+                <strong>ROAS yang Dilaporkan Platform (Facebook Ads Manager):</strong>
+              </p>
+              <div style={{ marginLeft: "15px", fontSize: "13px", marginBottom: "10px" }}>
+                Facebook melaporkan:
+                {` $40 juta penjualan / $10 juta pengeluaran = `}<span className="math-result">ROAS 4.0x</span>
+              </div>
+              <p style={{ fontSize: "13px", marginBottom: "8px" }}>
+                <strong>ROAS yang Diamati (Dari Data Pendapatan Anda):</strong>
+              </p>
+              <div style={{ marginLeft: "15px", fontSize: "13px", marginBottom: "10px" }}>
+                Data Anda menunjukkan: ($25 juta yang dapat diatribusikan ke FB) / $10 juta pengeluaran =
+                {` `}<span className="math-result">ROAS 2.5x</span>
+              </div>
+              <p style={{ fontSize: "13px" }}>
+                <strong>Kesenjangan:</strong> 4.0x - 2.5x = 1.5x kredit yang digelembungkan. Ini adalah bias atribusi murni.
+              </p>
+            </div>
+            <p style={{ marginTop: "12px", marginBottom: "8px", fontSize: "14px" }}>
+              <strong>Implikasi:</strong> Platform digital melebih-lebihkan kontribusi mereka sendiri. Dampak Facebook yang sebenarnya adalah ~60% dari apa yang mereka laporkan. Gunakan data Anda sendiri, bukan data mereka.
+            </p>
+          </div>
+
+          <div className="highlight-box" style={{ marginTop: "15px" }}>
+            <strong>Hasil Uji 4: Cek Sinergi/Halo</strong>
+            <p style={{ marginTop: "8px", marginBottom: "8px", fontSize: "14px" }}>
+              <strong>Temuan:</strong> Pendapatan Search meningkat saat TV ditayangkan. Secara spesifik:
+            </p>
+            <div style={{ marginLeft: "15px", fontSize: "13px", margin: "10px 0" }}>
+              Pendapatan Search = (0,28 × pengeluaran Search) + (0,35 × pengeluaran TV)
+              <br />
+              TV memiliki koefisien yang lebih kuat daripada pengeluaran Search itu sendiri.
+            </div>
+            <p style={{ marginTop: "12px", marginBottom: "8px", fontSize: "14px" }}>
+              <strong>Implikasi:</strong> TV "mempersiapkan" audiens. Jika kita memotong TV, Search akan berkinerja buruk. Saluran tidak independen. Optimalkan secara bersamaan.
+            </p>
           </div>
         </div>
       </section>
+
+      {/* ── SECTION 7 ── */}
       <section>
-        <h2>7. Temuan &amp; Wawasan</h2>
+        <h2>7. Tahap 2: Inferensi Kausal (ROAS Inkremental Sejati)</h2>
+        <div className="content">
+          <p>
+            Sekarang kita tahu <strong>Lapisan 1 (Kejenuhan) dan Lapisan 2 (Bias Atribusi) adalah masalah yang sebenarnya</strong>, kita membangun model kausal yang ditargetkan. Bukan MMM membengkak yang mencoba mengestimasi segalanya. Model BSTS (Deret Waktu Struktural Bayesian).
+          </p>
+
+          <p style={{ marginTop: "15px" }}>
+            <strong>Apa yang Dilakukan BSTS:</strong> Ia menjawab pertanyaan: <em>"Bagaimana pendapatan seandainya kita menghabiskan $0 pada Facebook selama 3 tahun terakhir?"</em> Ini adalah kontrafaktual. Perbedaan antara pendapatan aktual dan pendapatan kontrafaktual adalah dampak kausal.
+          </p>
+
+          <div className="calculation" style={{ margin: "15px 0" }}>
+{`Hasil Model BSTS (ROAS Kausal Sejati):
+
+Saluran: Facebook
+ROAS yang Dilaporkan (Platform):    4.0x
+ROAS Korelasi yang Diamati:         2.5x
+ROAS Kausal (BSTS):                 2.0x
+↑ Ini adalah angka yang SEBENARNYA
+
+Saluran: YouTube
+ROAS yang Dilaporkan (Platform):    3.0x
+ROAS Korelasi yang Diamati:         3.0x
+ROAS Kausal (BSTS):                 3.2x
+↑ YouTube sebenarnya LEBIH BAIK daripada yang dilaporkan
+
+Saluran: TV
+ROAS yang Dilaporkan (Bench industri): 1.8x (sering diabaikan)
+ROAS Korelasi yang Diamati:         3.5x
+ROAS Kausal (BSTS):                 5.8x
+↑ TV adalah pemain TERBAIK, tetapi tidak terlihat oleh atribusi digital
+
+Saluran: Search
+ROAS yang Dilaporkan (Platform):    5.0x
+ROAS Korelasi yang Diamati:         4.2x
+ROAS Kausal (BSTS):                 2.8x
+↑ Korelasi tinggi, tetapi banyak didorong oleh priming TV
+`}
+          </div>
+
+          <p style={{ marginTop: "15px" }}>
+            <strong>Wawasan Utama:</strong> ROAS kausal sejati membalikkan kebijaksanaan konvensional:
+          </p>
+
+          <table className="data-table" style={{ marginTop: "15px" }}>
+            <thead>
+              <tr>
+                <th>Saluran</th>
+                <th>Kata Platform</th>
+                <th>Kita Ukur</th>
+                <th>Realita (BSTS)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Facebook</td>
+                <td>Pahlawan (4.0x)</td>
+                <td>Bagus (2.5x)</td>
+                <td><strong>Jenuh (2.0x)</strong></td>
+              </tr>
+              <tr>
+                <td>YouTube</td>
+                <td>Bagus (3.0x)</td>
+                <td>Bagus (3.0x)</td>
+                <td><strong>Digital terbaik (3.2x)</strong></td>
+              </tr>
+              <tr>
+                <td>TV</td>
+                <td>Lemah (1.8x)</td>
+                <td>Kuat (3.5x)</td>
+                <td><strong>Terbaik secara keseluruhan (5.8x)</strong></td>
+              </tr>
+              <tr>
+                <td>Search</td>
+                <td>Pahlawan (5.0x)</td>
+                <td>Kuat (4.2x)</td>
+                <td><strong>Dibantu, bukan pendorong (2.8x)</strong></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div className="highlight-box" style={{ marginTop: "20px" }}>
+            <strong>Temuan Mengejutkan:</strong> TV 2,9x lebih efisien daripada Facebook, tetapi karena TV tidak menghasilkan "klik terakhir," TV secara sistematis kurang didanai. Sementara itu, Facebook mengambil kredit atas penjualan yang dimungkinkan oleh TV.
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 8 ── */}
+      <section>
+        <h2>8. Tahap 3: Optimasi Anggaran (Imbal Hasil Marginal Mendorong Alokasi)</h2>
+        <div className="content">
+          <p>
+            Sekarang kita tahu ROAS sejati per saluran. Tapi <strong>alokasi bukan hanya tentang ROAS rata-rata — ini tentang ROAS MARGINAL.</strong> Di sinilah sebagian besar analisis gagal.
+          </p>
+
+          <div className="highlight-box" style={{ marginTop: "15px" }}>
+            <strong>Kebingungan Marginal vs. Rata-rata:</strong>
+            <p style={{ marginTop: "8px", marginBottom: "8px", fontSize: "13px" }}>
+              <strong>ROAS Rata-rata:</strong> "Facebook menghasilkan $2 untuk setiap $1 yang dihabiskan" (di seluruh $10 juta)
+              <br />
+              <strong>ROAS Marginal:</strong> "$1 berikutnya yang saya habiskan di Facebook menghasilkan $0.50" (karena sudah jenuh)
+              <br />
+              <br />
+              <strong>Aturan keputusan yang benar:</strong> Alokasikan dolar inkremental ke saluran dengan imbal hasil marginal tertinggi, bukan imbal hasil rata-rata.
+            </p>
+          </div>
+
+          <div className="calculation" style={{ margin: "15px 0" }}>
+{`Alokasi Anggaran Saat Ini:
+Facebook:  $10M | ROAS Rata-rata: 2.0x | ROAS Marginal: 0.5x
+YouTube:   $5M  | ROAS Rata-rata: 3.2x | ROAS Marginal: 3.0x
+TV:        $15M | ROAS Rata-rata: 5.8x | ROAS Marginal: 5.0x
+Search:    $8M  | ROAS Rata-rata: 2.8x | ROAS Marginal: 2.0x
+
+Total Pengeluaran Saat Ini: $38M
+Total Pendapatan yang Dihasilkan Saat Ini: $156M
+
+SKENARIO 1 — Alokasi Ulang Konservatif (-$3M dari Facebook, +$3M ke YouTube):
+Alokasi Baru: Facebook $7M, YouTube $8M, TV $15M, Search $8M
+Hilang dari Facebook: $3M × 0.5 mROAS = $1.5M
+Keuntungan di YouTube: $3M × 3.0 mROAS = $9M
+Dampak Bersih: +$7.5M pendapatan
+
+SKENARIO 2 — Alokasi Ulang Target (-$5M dari Facebook, +$3M YouTube, +$2M TV):
+Alokasi Baru: Facebook $5M, YouTube $8M, TV $17M, Search $8M
+Hilang dari Facebook: $5M × 0.5 mROAS = $2.5M
+Keuntungan di YouTube: $3M × 3.0 mROAS = $9M
+Keuntungan di TV: $2M × 5.0 mROAS = $10M
+Dampak Bersih: +$16.5M pendapatan
+
+SKENARIO 3 — Alokasi Ulang Agresif (-$8M dari Facebook, +$4M YouTube, +$4M TV):
+Alokasi Baru: Facebook $2M, YouTube $9M, TV $19M, Search $8M
+Hilang dari Facebook: $8M × 0.5 mROAS = $4M
+Keuntungan di YouTube: $4M × 3.0 mROAS = $12M
+Keuntungan di TV: $4M × 5.0 mROAS = $20M
+Dampak Bersih: +$28M pendapatan
+(Namun risiko: menghilangkan kehadiran merek sepenuhnya dari Facebook)
+`}
+          </div>
+
+          <p style={{ marginTop: "15px" }}>
+            <strong>Rekomendasi: Skenario Target</strong>
+          </p>
+          <p>
+            Alokasikan ulang $5 juta dari Facebook yang terlalu jenuh ke YouTube ($3 juta) dan TV ($2 juta) yang belum jenuh.
+          </p>
+          <p style={{ marginTop: "15px", marginBottom: "15px" }}>
+            <strong>Hasil yang Diharapkan:</strong>
+          </p>
+          <div style={{ marginLeft: "15px" }}>
+            <div style={{ marginBottom: "10px" }}>
+              Pendapatan Total Saat Ini: $156 juta
+            </div>
+            <div>
+              Pendapatan Total Baru: $156M + $16.5M ={" "}
+              <span className="math-result">$172.5 juta</span> (+10,6% peningkatan dengan total pengeluaran yang sama)
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 9 ── */}
+      <section>
+        <h2>9. Temuan & Wawasan</h2>
         <div className="content">
           <div className="highlight-box">
             <strong>Apa yang Kami Harapkan vs. Apa yang Kami Temukan:</strong>
-            <table className="data-table" style={{marginTop: '15px'}}>
+            <table className="data-table" style={{ marginTop: "15px" }}>
               <thead>
-                <tr><th>Asumsi</th><th>Diharapkan</th><th>Temuan Sebenarnya</th></tr>
+                <tr>
+                  <th>Asumsi</th>
+                  <th>Diharapkan</th>
+                  <th>Temuan Sebenarnya</th>
+                </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Pendorong utama limbah</td>
-                  <td>Pemesanan berlebih acak</td>
-                  <td><strong>Pemesanan berlebih sistematis hari Senin (40% dari semua limbah di hari Senin)</strong></td>
+                  <td>Saluran digital paling efisien</td>
+                  <td>ROAS Digital: 3.5-5.0x</td>
+                  <td><strong>TV 5.8x; digital 2.0-3.2x</strong></td>
                 </tr>
                 <tr>
-                  <td>Biaya kehabisan stok</td>
-                  <td>Margin item yang hilang saja</td>
-                  <td><strong>Biaya sebenarnya 1,7x lebih tinggi karena pengabaian keranjang</strong></td>
+                  <td>Search adalah pemain terbaik</td>
+                  <td>Search mendorong pendapatan terbanyak</td>
+                  <td><strong>Search "dibantu" oleh TV; ROAS mandiri hanya 2.8x</strong></td>
                 </tr>
                 <tr>
-                  <td>Kehabisan stok susu premium</td>
-                  <td>Penjualan hilang</td>
-                  <td><strong>80% beralih ke merek toko — tidak ada pengabaian keranjang</strong></td>
+                  <td>Lebih banyak pengeluaran Facebook itu bagus</td>
+                  <td>Anggaran harus ditingkatkan</td>
+                  <td><strong>Facebook jenuh di atas $8M; imbal hasil marginal hanya 0.5x</strong></td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <ul style={{marginTop: '20px'}}>
-            <li><strong>Korelasi Cuaca:</strong> Kenaikan suhu 5°F di atas rata-rata musiman berkorelasi dengan lonjakan 25% dalam penjualan minuman ringan dan arang. Ini signifikan secara statistik (p < 0,01) dan dapat dimasukkan ke dalam pemicu pemesanan ulang dinamis melalui API Cuaca.</li>
-            <li><strong>Puncak Limbah Hari Senin:</strong> 40% dari semua limbah produk segar terjadi Senin pagi. Akar penyebab: pesanan akhir pekan dilakukan hari Kamis dengan jendela pengiriman Jumat, secara sistematis melebih-lebihkan permintaan akhir pekan sebesar 15%. Perbaikan: pecah pesanan akhir pekan menjadi pengiriman Jumat (untuk Jum/Sab) dan pengiriman Minggu (untuk Sen/Sel).</li>
-            <li><strong>Temuan Kanibalisasi:</strong> Ketika "Susu Merek Premium A" kehabisan stok, 80% pelanggan beralih ke "Merek Toko B" — tidak ada pengabaian keranjang. <em>Tindakan:</em> Kita bisa menerima probabilitas kehabisan stok yang lebih tinggi untuk Merek A dan menggunakan modal stok pengaman yang dibebaskan untuk item dengan tingkat pengabaian lebih tinggi seperti buah beri organik segar.</li>
-            <li><strong>Wawasan Kontra-Intuitif:</strong> Menahan 5% lebih banyak stok pengaman untuk produk segar Kelas A justru <em>mengurangi</em> total biaya limbah — karena mencegah satu pengabaian keranjang ($85) memulihkan biaya membawa 10 unit ekstra berkali-kali lipat.</li>
+
+          <ul style={{ marginTop: "20px" }}>
+            <li>
+              <strong>Penemuan Bias Atribusi:</strong> Platform digital secara sistematis melebih-lebihkan kontribusi mereka sendiri sebesar 60%. Ini bukan niat jahat — ini keterbatasan inheren dari atribusi klik-terakhir. Platform hanya bisa melihat klik terakhir. Mereka tidak bisa melihat iklan TV yang mempersiapkan pelanggan.
+            </li>
+            <li>
+              <strong>Temuan Sinergi:</strong> TV dan Search adalah mitra, bukan pesaing. Saat TV ditayangkan, Search terkonversi 25% lebih baik. Ini berarti tim pemasaran (TV) dan tim digital (Search) sebenarnya berada di pihak yang sama. Insentif mereka harus diselaraskan.
+            </li>
+            <li>
+              <strong>Wawasan Kejenuhan:</strong> Imbal hasil yang berkurang bukan bug dalam data — melainkan fitur periklanan. Dolar pertama yang dihabiskan menjangkau audiens yang paling responsif. Dolar berikutnya menjangkau audiens yang kurang responsif. Ini dapat diprediksi dan harus dimasukkan ke dalam alokasi anggaran.
+            </li>
+            <li>
+              <strong>Implikasi Keuangan:</strong> Ancaman pemotongan anggaran $20 juta didasarkan pada pengukuran yang cacat. Dengan atribusi kausal sejati, kita dapat menunjukkan kepada Keuangan bahwa pemasaran sebenarnya berkinerja baik — terutama TV. Alokasi ulang (bukan pemotongan) akan meningkatkan pendapatan sebesar $16.5 juta.
+            </li>
           </ul>
         </div>
       </section>
+
+      {/* ── SECTION 10 ── */}
       <section>
-        <h2>8. Rekomendasi</h2>
+        <h2>10. Rekomendasi & Pengambilan Keputusan Bisnis</h2>
         <div className="content">
-          <p><strong>Jangka Pendek (Minggu 1–6):</strong></p>
+          <p><strong>Tindakan Segera (Minggu 1-4):</strong></p>
           <ul>
-            <li><strong>Implementasikan Titik Pemesanan Ulang Dinamis Hari-dalam-Seminggu</strong> untuk semua SKU Kelas A. Ganti satu titik pemesanan ulang mingguan dengan 7 nilai harian berdasarkan permintaan historis hari-dalam-seminggu. <br /><strong>Dampak yang Diharapkan:</strong> Mengurangi limbah hari Senin sebesar 25% (~$300.000 tahunan). <strong>Biaya:</strong> 3 minggu rekayasa. <strong>Tidak diperlukan data baru.</strong></li>
-            <li><strong>Otomatiskan Pemicu Penurunan Harga</strong> untuk produk segar dengan masa simpan <48 jam dan stok >20% tersisa: dorong diskon 30% khusus aplikasi loyalitas. <br /><strong>Dampak yang Diharapkan:</strong> Memulihkan 40% dari limbah yang seharusnya terjadi sebagai pendapatan diskon ($180.000/tahun). <strong>Risiko:</strong> Melatih pelanggan untuk menunggu penurunan harga — mitigasi dengan membatasi pada anggota loyalitas dan mengacak waktu diskon.</li>
+            <li>
+              <strong>Berhenti menggunakan "ROAS Klik-Terakhir" sebagai KPI.</strong> Gantilah dengan "ROAS Inkremental" yang diturunkan dari model BSTS. Ini menyelaraskan insentif. Tim digital tidak lagi termotivasi untuk mengakali metrik klik-terakhir.
+            </li>
+            <li>
+              <strong>Alokasikan ulang $5 juta dari Facebook ke YouTube + TV.</strong> Ini adalah pergeseran anggaran, bukan pemotongan. Total pengeluaran sama, pendapatan total lebih tinggi.
+            </li>
+            <li>
+              <strong>Implementasikan Tes Holdout.</strong> Matikan semua pemasaran di satu kota selama 2-4 minggu. Ini memberi Anda "kontrafaktual" untuk memvalidasi hasil BSTS. Jika kota holdout kehilangan $2 juta pendapatan dari pengeluaran $500 ribu, estimasi mROAS Anda benar.
+            </li>
           </ul>
-          <p><strong>Jangka Panjang (Bulan 2–4):</strong></p>
+
+          <p style={{ marginTop: "20px" }}>
+            <strong>Jangka Menengah (Bulan 2-6):</strong>
+          </p>
           <ul>
-            <li><strong>Integrasikan API Cuaca</strong> ke dalam mesin pengisian ulang untuk kategori BBQ, produk segar, dan minuman. <br /><strong>Dampak yang Diharapkan:</strong> Mengurangi kehabisan stok yang didorong oleh cuaca sebesar 40%, memulihkan ~$250.000 dalam penjualan yang hilang setiap tahun.</li>
+            <li>
+              <strong>Pindah ke model "Anggaran Cair".</strong> Alih-alih anggaran tahunan tetap, alokasikan setiap bulan berdasarkan kurva ROI marginal. Saat kejenuhan berubah, anggaran bergeser secara otomatis. Ini adalah optimasi dinamis.
+            </li>
+            <li>
+              <strong>Implementasikan "Pengukuran Terpadu".</strong> Gabungkan BSTS (strategis, jangka panjang) dengan atribusi berbasis kohort (taktis, jangka pendek). Gunakan MMM kausal untuk alokasi anggaran; gunakan analisis kohort untuk diagnostik tingkat kampanye.
+            </li>
           </ul>
+
+          <p style={{ marginTop: "20px" }}>
+            <strong>Jangka Panjang (6+ Bulan):</strong>
+          </p>
           <ul>
-            <li><strong>Terapkan Rumus Stok Pengaman Diperluas</strong> di seluruh rantai untuk semua SKU Kelas A (menggantikan rumus sederhana). <br /><strong>Dampak yang Diharapkan:</strong> Mengurangi frekuensi kehabisan stok sebesar 35%, menghemat ~$375.000 dalam penjualan yang hilang di tingkat keranjang. <br /><strong>Risiko:</strong> Biaya penyimpanan yang lebih tinggi (peningkatan ~$180.000/tahun) — manfaat bersih tetap ~$195.000/tahun.</li>
+            <li>
+              <strong>Bangun proses "Rekonsiliasi Atribusi".</strong> Bulanan: bandingkan ROAS yang dilaporkan platform dengan estimasi BSTS Anda. Lacak kesenjangannya. Jika melebar, selidiki alasannya. Ini menjaga platform tetap jujur.
+            </li>
+            <li>
+              <strong>Perluas model ke KPI lain.</strong> Kami mengoptimalkan pendapatan. Bagaimana dengan margin? Bagaimana dengan nilai seumur hidup pelanggan (lifetime value)? Pendapatan TV $1 mungkin mendorong pembelian ulang dengan margin lebih tinggi daripada pendapatan Search $1.
+            </li>
           </ul>
-          <div className="highlight-box" style={{marginTop: '20px'}}>
-            <strong>Matriks Prioritas:</strong>
-            <table className="data-table">
-              <thead>
-                <tr><th>Tindakan</th><th>Manfaat Tahunan</th><th>Biaya</th><th>Prioritas</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>Titik Pemesanan Ulang Harian</td><td>$300K</td><td>Rendah</td><td>🔴 Lakukan Dulu</td></tr>
-                <tr><td>Pemicu Penurunan Harga Otomatis</td><td>$180K</td><td>Rendah</td><td>🔴 Lakukan Dulu</td></tr>
-                <tr><td>Integrasi API Cuaca</td><td>$250K</td><td>Sedang</td><td>🟡 Bulan 2</td></tr>
-                <tr><td>Rumus Stok Pengaman Diperluas</td><td>$195K bersih</td><td>Rendah</td><td>🟡 Bulan 2</td></tr>
-              </tbody>
-            </table>
+
+          <div className="highlight-box" style={{ marginTop: "20px" }}>
+            <strong>Keputusan CMO:</strong>
+            <ol>
+              <li>
+                <strong>Persetujuan:</strong> Lanjutkan dengan alokasi ulang $5 juta dari Facebook ke YouTube + TV. Peningkatan yang diharapkan: pendapatan $16.5 juta dengan pengeluaran yang sama.
+              </li>
+              <li>
+                <strong>Uji Coba Holdout:</strong> Jalankan tes holdout di pasar Boston selama 3 minggu. Jika hasil cocok dengan prediksi BSTS (dalam 10%), luncurkan model ke semua keputusan anggaran di masa mendatang.
+              </li>
+              <li>
+                <strong>Penyelarasan Pemangku Kepentingan:</strong> Presentasikan temuan kepada Keuangan. Pesannya: "Pemasaran itu kuat (ROI 5.8x pada TV). Pengukurannya yang salah. Alokasi ulang akan membuktikannya."
+              </li>
+              <li>
+                <strong>Insentif Tim:</strong> Ubah KPI tim digital dari "ROAS Klik-Terakhir" menjadi "ROAS Inkremental." Ini menghilangkan insentif untuk mengakali sistem dan menyelaraskan mereka dengan Keuangan.
+              </li>
+            </ol>
           </div>
         </div>
       </section>
+
+      {/* ── SECTION 11 ── */}
       <section>
-        <h2>9. Pengambilan Keputusan Bisnis</h2>
+        <h2>11. Pola Pikir Analis Profesional: Mengapa Pendekatan Ini Berhasil</h2>
         <div className="content">
-          <p>Manajer Kategori dan CFO menyelaraskan pada pendekatan bertahap setelah melihat gambaran biaya penuh:</p>
-          <ol>
-            <li><strong>Segmentasi Ulang Katalog berdasarkan Kekritisan:</strong> Kelompokkan SKU berdasarkan "Skor Efek Halo" (tingkat pengabaian keranjang saat kehabisan stok) daripada sekadar margin. Alpukat Organik mendapatkan perlakuan Kelas A meskipun margin itemnya hanya $1,20 — karena kehabisan stoknya memicu kerugian keranjang $85.</li>
-            <li><strong>Beralih ke Inventaris yang Dikelola Vendor (VMI) untuk 5 Pemasok Teratas:</strong> Untuk SKU Kelas A dengan kecepatan tinggi, berikan pemasok visibilitas ke data POS waktu nyata sehingga mereka dapat memicu pengisian ulang secara proaktif. <em>Mengurangi variabilitas waktu tunggu dari σLT=0,82 menjadi estimasi 0,35 hari.</em></li>
-            <li><strong>Strategi Alternatif Ditolak:</strong> Manajer Inventaris mengusulkan untuk meningkatkan semua stok pengaman sebesar 20% datar. CFO menolak ini — itu akan meningkatkan modal kerja sebesar $1,4 juta tanpa logika penargetan. Pendekatan yang didorong analitik mencapai hasil yang lebih baik dengan seperempat biaya.</li>
-          </ol>
-          <div className="highlight-box" style={{marginTop: '20px'}}>
-            <strong>Dasbor Pemantauan — KPI Mingguan:</strong>
-            <table className="data-table">
-              <thead>
-                <tr><th>KPI</th><th>Saat Ini</th><th>Target (Q2)</th><th>Ambang Batas Peringatan</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>Ketersediaan di Rak (Kelas A)</td><td>91%</td><td>98,5%</td><td><96% = tinjauan pembeli</td></tr>
-                <tr><td>Indeks Limbah Hari Senin</td><td>2,8x rata-rata</td><td>1,3x rata-rata</td><td>>2,0x = tandai rencana pesanan</td></tr>
-                <tr><td>Tingkat Penyusutan (% dari COGS)</td><td>1,8%</td><td>1,2%</td><td>>1,6% = tinjauan kategori</td></tr>
-                <tr><td>Tingkat Pengabaian Keranjang</td><td>~15%</td><td><8%</td><td>>12% = investigasi kehabisan stok</td></tr>
-                <tr><td>Tingkat Pemulihan Penurunan Harga</td><td>N/A (baru)</td><td>>60% stok kedaluwarsa</td><td><40% = tinjauan pemicu</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h2>10. Pola Pikir Analis Profesional</h2>
-        <div className="content">
-          <p><strong>Perspektif Senior:</strong> Pemula mencoba meminimalkan limbah. Senior mencoba memaksimalkan <strong>Profitabilitas Total</strong>. Terkadang, keputusan yang paling menguntungkan adalah menahan inventaris tambahan dan menerima biaya penyimpanan yang sedikit lebih tinggi — karena alternatifnya (kehabisan stok + pengabaian keranjang) biayanya 5x lebih besar. Kuncinya adalah tidak pernah mengoptimalkan satu metrik secara terisolasi.</p>
+          <p>
+            <strong>Perspektif Senior:</strong> Platform digital diberi insentif untuk menunjukkan ROI tinggi kepada Anda. Analis senior bersikap skeptis secara alami. Mereka tahu bahwa <strong>"Korelasi bukan Inkremental."</strong> Hanya karena seseorang mengeklik iklan dan membeli, bukan berarti iklan tersebut <em>menyebabkan</em> pembelian.
+          </p>
+
           <div className="highlight-box">
-            <strong>Pelajaran Kunci:</strong> Data dalam silo itu berbahaya. Jika Anda hanya melihat "Data Inventaris," Anda melihat limbah. Jika Anda menggabungkannya dengan "Data Loyalitas," Anda melihat <strong>Hubungan Pelanggan</strong>. Efek Halo mengubah kehabisan stok item $25 menjadi kerugian keranjang $85 — temuan yang tidak terlihat tanpa analisis lintas data.
+            <strong>Mengapa Diagnostik Berlapis Mengalahkan Satu Model Besar:</strong>
+            <p style={{ marginTop: "8px", marginBottom: "8px", fontSize: "13px" }}>
+              Pemula membangun satu model MMM dan memercayainya. Senior membangun tes diagnostik terlebih dahulu. Mengapa? Karena jika modelnya salah, Anda perlu tahu lapisan mana yang rusak. Diagnostik memberi tahu Anda:
+            </p>
+            <ul style={{ marginTop: "8px", marginBottom: "8px", fontSize: "13px" }}>
+              <li>Apakah kejenuhan itu nyata? (Lapisan 1)</li>
+              <li>Apakah atribusi bias? (Lapisan 2)</li>
+              <li>Apakah ada efek memori? (Lapisan 3)</li>
+              <li>Apakah ada sinergi? (Lapisan 4)</li>
+            </ul>
+            <p style={{ marginTop: "8px", fontSize: "13px" }}>
+              Setelah Anda tahu lapisan mana yang penting, model Anda secara otomatis menjadi lebih baik karena Anda hanya memodelkan apa yang nyata.
+            </p>
           </div>
-          <div className="highlight-box" style={{marginTop: '20px'}}>
-            <strong>Kesalahan Pemula yang Umum:</strong> Kebanyakan pemula menggunakan rumus Stok Pengaman Sederhana (Z × σD × √LT) dan menganggapnya selesai. Rumus ini mengasumsikan waktu tunggu <em>konstan</em> — yang hampir tidak pernah benar dalam praktiknya, terutama untuk produk segar di mana keterlambatan pemasok sering terjadi. Rumus Diperluas, yang menambahkan σLT² ke dalam perhitungan, biasanya menghasilkan estimasi stok pengaman 2–3x lebih tinggi. Selalu tanyakan: "Asumsi apa yang dibuat rumus ini, dan apakah asumsi tersebut benar dalam konteks ini?"
+
+          <div className="highlight-box" style={{ marginTop: "20px" }}>
+            <strong>Wawasan Imbal Hasil Marginal:</strong>
+            <p style={{ marginTop: "8px", marginBottom: "8px", fontSize: "13px" }}>
+              Kebanyakan pemasar mengoptimalkan ROAS rata-rata. Ekonom mengoptimalkan ROAS marginal. Perbedaannya adalah perbedaan antara "baik" dan "benar." Jika ROAS rata-rata Facebook adalah 2.0x tetapi ROAS marginalnya 0.5x, dolar berikutnya harus masuk ke saluran yang berbeda. Ini adalah optimasi dasar. Anehnya, sebagian besar perusahaan tidak melakukannya.
+            </p>
           </div>
-          <div className="highlight-box" style={{marginTop: '20px'}}>
-            <strong>Wawasan Siap Wawancara:</strong> Jika ditanya "Bagaimana Anda mengurangi limbah toko kelontong?" dalam wawancara kasus, hindari jebakan untuk langsung mengatakan "pesan lebih sedikit." Pembingkaian yang benar: <em>"Pertama, saya akan mengklasifikasikan SKU berdasarkan kekritisan (analisis ABC). Kemudian saya akan memahami biaya KEDUA-DUANYA, yaitu pemesanan berlebih (limbah) DAN pemesanan kurang (kehabisan stok + pengabaian keranjang). Kemudian saya akan memodelkan variabilitas permintaan pada tingkat hari-dalam-seminggu dan cuaca. Tujuannya bukan nol limbah — melainkan limbah optimal mengingat pertukaran biaya kehabisan stok."</em>
+
+          <div className="highlight-box" style={{ marginTop: "20px" }}>
+            <strong>Wawasan Siap Wawancara:</strong>
+            <p style={{ marginTop: "8px", marginBottom: "8px", fontSize: "13px" }}>
+              Jika ditanya "Bagaimana Anda mengoptimalkan anggaran pemasaran?" dalam wawancara, jawaban pemenangnya adalah:
+            </p>
+            <p style={{ marginTop: "8px", fontSize: "13px", fontStyle: "italic" }}>
+              "Pertama, saya akan mendiagnosis lapisan masalahnya: kejenuhan, bias atribusi, efek memori, dan sinergi. Saya akan menguji masing-masing secara independen. Kemudian, saya akan menggunakan inferensi kausal (BSTS, bukan korelasi) untuk mengukur dampak sejati. Akhirnya, saya akan mengalokasikan secara inkremental untuk memaksimalkan imbal hasil marginal, bukan imbal hasil rata-rata. Ini adalah pemikiran sistem, bukan sekadar analitik."
+            </p>
           </div>
         </div>
       </section>
     </div>
   );
 };
-export default Case03;
+
+export default Case08;
