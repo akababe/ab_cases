@@ -344,37 +344,88 @@ Key Surprise: review_score is the WEAKEST predictor.
             management a range, not a single number:
           </p>
           <div className="calculation">
-{`Base Assumptions:
-New Monthly Subs: 10,000
-CAC: $60 | Monthly Margin: $15
-Break-even: Month 4 (CAC recovered after 4 margin payments)
-Current M3 Churn: 45% (4,500 users lost)
-Current State (Status Quo):
-Total Lost Margin: 4,500 × $15 = $67,500/month
-Wasted CAC: 4,500 × $60 = $270,000/month (never recovered)
-─────────────────────────────────────────────────────────────
-SENSITIVITY ANALYSIS: Impact of Different Churn Reductions
-─────────────────────────────────────────────────────────────
-Scenario     │ New Churn │ Users Saved │ Margin Saved │ Revenue M4-M6 │ Net Benefit
-─────────────┼───────────┼────────────┼──────────────┼───────────────┼────────────
-Conservative │ 40% (-5%) │    500     │   $7,500     │   $22,500     │ `}<span className="math-result">$30,000/mo</span>
-{`Target       │ 35% (-10%)│  1,000     │  $15,000     │   $45,000     │ `}<span className="math-result">$60,000/mo</span>
-{`Optimistic   │ 30% (-15%)│  1,500     │  $22,500     │   $67,500     │ `}<span className="math-result">$90,000/mo</span>
-{`
-Intervention Cost Estimate:
-- Automated email/SMS system: $3,000/month
-- Choice feature improvement: $15,000 one-time (dev cost)
-- Skincare-heavy M1 box shift: +$2.40/box COGS increase
-  Monthly cost increase: 10,000 × $2.40 = $24,000/month
-Break-even Analysis:
-Even the CONSERVATIVE scenario ($30,000/month benefit)
-exceeds the intervention cost ($3,000 + $24,000 = $27,000/month).
-Net positive from Day 1: `}<span className="math-result">+$3,000/month minimum</span>
-{`
-12-Month Annualized Impact (Target Scenario):
-$60,000/month × 12 = `}<span className="math-result">$720,000/year in retained revenue</span>
-{`Plus recovered CAC: 1,000 users × $60 × 12 months = $720,000
-Total annual value: `}<span className="math-result">$1,440,000</span>
+            <strong>Base Assumptions:</strong>
+            <br />
+            New Monthly Subs: 10,000
+            <br />
+            CAC: $60 | Monthly Margin: $15
+            <br />
+            Break-even: Month 4 (CAC recovered after 4 margin payments)
+            <br />
+            Current M3 Churn: 45% (4,500 users lost)
+            <br />
+            <br />
+            <strong>Current State (Status Quo):</strong>
+            <br />
+            Total Lost Margin: 4,500 × $15 = $67,500/month
+            <br />
+            Wasted CAC: 4,500 × $60 = $270,000/month (never recovered)
+            <br />
+            <br />
+            <strong>SENSITIVITY ANALYSIS: Impact of Different Churn Reductions</strong>
+            <div style={{ overflowX: "auto", margin: "12px 0" }}>
+              <table className="data-table">
+                <thead>
+                  <tr>
+                    <th>Scenario</th>
+                    <th>New Churn</th>
+                    <th>Users Saved</th>
+                    <th>Margin Saved</th>
+                    <th>Revenue M4-M6</th>
+                    <th>Net Benefit</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Conservative</td>
+                    <td>40% (-5%)</td>
+                    <td>500</td>
+                    <td>$7,500</td>
+                    <td>$22,500</td>
+                    <td><span className="math-result">$30,000/mo</span></td>
+                  </tr>
+                  <tr>
+                    <td>Target</td>
+                    <td>35% (-10%)</td>
+                    <td>1,000</td>
+                    <td>$15,000</td>
+                    <td>$45,000</td>
+                    <td><span className="math-result">$60,000/mo</span></td>
+                  </tr>
+                  <tr>
+                    <td>Optimistic</td>
+                    <td>30% (-15%)</td>
+                    <td>1,500</td>
+                    <td>$22,500</td>
+                    <td>$67,500</td>
+                    <td><span className="math-result">$90,000/mo</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <strong>Intervention Cost Estimate:</strong>
+            <ul>
+              <li>Automated email/SMS system: $3,000/month</li>
+              <li>Choice feature improvement: $15,000 one-time (dev cost)</li>
+              <li>Skincare-heavy M1 box shift: +$2.40/box COGS increase</li>
+            </ul>
+            Monthly cost increase: 10,000 × $2.40 = $24,000/month
+            <br />
+            <strong>Break-even Analysis:</strong>
+            <br />
+            Even the CONSERVATIVE scenario ($30,000/month benefit) exceeds the intervention cost
+            ($3,000 + $24,000 = $27,000/month).
+            <br />
+            Net positive from Day 1: <span className="math-result">+$3,000/month minimum</span>
+            <br />
+            <br />
+            <strong>12-Month Annualized Impact (Target Scenario):</strong>
+            <br />
+            $60,000/month × 12 = <span className="math-result">$720,000/year in retained revenue</span>
+            <br />
+            Plus recovered CAC: 1,000 users × $60 × 12 months = $720,000
+            <br />
+            Total annual value: <span className="math-result">$1,440,000</span>
           </div>
         </div>
       </section>
