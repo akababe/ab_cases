@@ -122,6 +122,13 @@ select {
   width: 100%;
 }
 
+.case-study,
+.content,
+.case-header,
+.highlight-box {
+  overflow-wrap: anywhere;
+}
+
 .case-header {
   margin-bottom: 80px;
   padding-bottom: 40px;
@@ -149,6 +156,7 @@ select {
   font-size: 0.9rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  overflow-wrap: anywhere;
 }
 
 section {
@@ -174,6 +182,11 @@ section h2 {
 .content ul,
 .content ol {
   padding-left: 1.25rem;
+}
+
+.content p,
+.content li {
+  overflow-wrap: anywhere;
 }
 
 .content li + li {
@@ -202,6 +215,7 @@ section h2 {
   text-align: left;
   vertical-align: top;
   word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .data-table th {
@@ -217,6 +231,8 @@ section h2 {
   font-family: monospace;
   white-space: pre-wrap;
   overflow-x: auto;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 .math-result {
