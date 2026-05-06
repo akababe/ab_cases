@@ -227,9 +227,9 @@ function App() {
         <div className="case-transition-wrapper" key={activeCaseId}>
           {activeCase?.component}
         </div>
-        <div className="keyboard-hint">
-          <kbd>←</kbd> <kbd>→</kbd> or <kbd>k</kbd> <kbd>j</kbd> to navigate · <kbd>Ctrl+D</kbd> for dark mode · <kbd>?</kbd> for help
-        </div>
+        <footer className="app-footer">
+          <p className="footer-quote">"Manjadda Wajadda"</p>
+        </footer>
       </main>
     </div>
   );
