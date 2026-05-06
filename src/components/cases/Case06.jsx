@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Case06 = () => {
   return (
     <div className="case-study">
@@ -8,7 +6,6 @@ const Case06 = () => {
         <h1>The Last-Mile Bottleneck</h1>
         <div className="case-meta">Industry: Logistics / E-commerce &bull; Level: Intermediate</div>
       </header>
-
       <section>
         <h2>1. Business Background</h2>
         <div className="content">
@@ -21,7 +18,6 @@ const Case06 = () => {
           </div>
         </div>
       </section>
-
       <section>
         <h2>2. Business Problem</h2>
         <div className="content">
@@ -34,7 +30,6 @@ const Case06 = () => {
           </ul>
         </div>
       </section>
-
       <section>
         <h2>3. Analytics Objective</h2>
         <div className="content">
@@ -51,7 +46,6 @@ const Case06 = () => {
           </div>
         </div>
       </section>
-
       <section>
         <h2>4. Data Perspective</h2>
         <div className="content">
@@ -68,7 +62,6 @@ const Case06 = () => {
               <tr><td><strong>HR / Driver Data</strong></td><td>Route assigned, complaints, overtime hours, tenure</td><td>Driver satisfaction linkage</td><td>Weekly</td></tr>
             </tbody>
           </table>
-
           <p style={{marginTop: '20px'}}><strong>Sample Delivery Log — Zone 7 (Urban Residential), One Van, One Day:</strong></p>
           <table className="data-table">
             <thead>
@@ -83,7 +76,6 @@ const Case06 = () => {
               <tr><td>6</td><td>House</td><td>6:30 PM</td><td>2nd</td><td>✅ Success</td><td>8.4 mi deadhead</td><td>No</td></tr>
             </tbody>
           </table>
-
           <div className="highlight-box" style={{marginTop: '15px'}}>
             <strong>What the Data Shows Immediately:</strong> Stop 5 (apartment, 12 PM) failed — predictable, because apartment residents are rarely home at noon on a weekday. Stop 6 required an 8.4-mile deadhead trip for a second attempt at 6:30 PM. Total waste: 8.4 miles + $8.00 re-delivery cost. The fix: re-sequence apartment deliveries to the 6–8 PM window on the first pass.
           </div>
@@ -96,7 +88,6 @@ const Case06 = () => {
           </div>
         </div>
       </section>
-
       <section>
         <h2>5. Step-by-Step Analytical Thinking</h2>
         <div className="content">
@@ -110,7 +101,6 @@ Fuel:                       $1.50  (26.8%)
 Re-delivery failures:       $0.84  (15.0%) ← 100% avoidable
 Vehicle depreciation:       $0.65  (11.6%)
 Overhead (dispatch, tech):  $0.51   (9.1%)
-
 Priority: Attack labor (time) and failures first.
 A 10% reduction in route time AND a 20% reduction in failures
 together save $0.42/delivery = 7.5% cost reduction.`}
@@ -156,7 +146,6 @@ together save $0.42/delivery = 7.5% cost reduction.`}
           </ol>
         </div>
       </section>
-
       <section>
         <h2>6. Calculation &amp; Simulation</h2>
         <div className="content">
@@ -165,7 +154,6 @@ together save $0.42/delivery = 7.5% cost reduction.`}
 {`FLEET BASELINE:
 5,000 vans | 100 miles/van/day | 300 operating days/year
 15 MPG fuel efficiency | $4.50/gallon | 66,000 deliveries/day
-
 ─────────────────────────────────────────────────────────────
 LEVER 1 — Route Mileage Reduction (13% from TSP + right turns):
 Current fuel cost: (5,000×100×300)/15 × $4.50 = $45,000,000
@@ -189,7 +177,6 @@ Saved replacements: 5,000 × 14% × $4,200 = `}<span className="math-result">$2,
 LEVER 4 — Capacity Recovery (2.9 extra deliveries/van/day):
 Revenue per delivery: $5.60 → extra capacity = 5,000 × 2.9 × $5.60 × 300 = `}<span className="math-result">$24,360,000 new revenue potential</span>
 {`(Even if only 50% utilized: `}<span className="math-result">$12,180,000</span>{`)
-
 ─────────────────────────────────────────────────────────────
 TOTAL SAVINGS (Levers 1–3 + 50% of Lever 4):
 $5,850,000 + $4,752,000 + $2,940,000 + $12,180,000 = `}<span className="math-result">$25,722,000/year</span>
@@ -201,7 +188,6 @@ Total savings ÷ 5,000 vans = `}<span className="math-result">$5,144/van/year</s
           </div>
         </div>
       </section>
-
       <section>
         <h2>7. Findings &amp; Insights</h2>
         <div className="content">
@@ -238,7 +224,6 @@ Total savings ÷ 5,000 vans = `}<span className="math-result">$5,144/van/year</s
           </ul>
         </div>
       </section>
-
       <section>
         <h2>8. Recommendations</h2>
         <div className="content">
@@ -268,7 +253,6 @@ Total savings ÷ 5,000 vans = `}<span className="math-result">$5,144/van/year</s
           </div>
         </div>
       </section>
-
       <section>
         <h2>9. Business Decision-Making</h2>
         <div className="content">
@@ -295,7 +279,6 @@ Total savings ÷ 5,000 vans = `}<span className="math-result">$5,144/van/year</s
           </div>
         </div>
       </section>
-
       <section>
         <h2>10. Professional Analyst Mindset</h2>
         <div className="content">
@@ -314,5 +297,4 @@ Total savings ÷ 5,000 vans = `}<span className="math-result">$5,144/van/year</s
     </div>
   );
 };
-
 export default Case06;

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Case08 = () => {
   return (
     <div className="case-study">
@@ -8,7 +6,6 @@ const Case08 = () => {
         <h1>The Attribution Blind Spot</h1>
         <div className="case-meta">Industry: Media / CPG / Advertising &bull; Level: Advanced</div>
       </header>
-
       <section>
         <h2>1. Business Background</h2>
         <div className="content">
@@ -20,7 +17,6 @@ const Case08 = () => {
           </div>
         </div>
       </section>
-
       <section>
         <h2>2. Business Problem</h2>
         <div className="content">
@@ -33,7 +29,6 @@ const Case08 = () => {
           </ul>
         </div>
       </section>
-
       <section>
         <h2>3. Analytics Objective</h2>
         <div className="content">
@@ -48,7 +43,6 @@ const Case08 = () => {
           </div>
         </div>
       </section>
-
       <section>
         <h2>4. Data Perspective</h2>
         <div className="content">
@@ -86,7 +80,6 @@ const Case08 = () => {
           </table>
         </div>
       </section>
-
       <section>
         <h2>5. Step-by-Step Analytical Thinking</h2>
         <div className="content">
@@ -98,7 +91,6 @@ const Case08 = () => {
           </ol>
         </div>
       </section>
-
       <section>
         <h2>6. Calculation & Simulation</h2>
         <div className="content">
@@ -109,24 +101,19 @@ Channel: Facebook
 Current Spend: $10M
 Total Sales Driven: $40M
 ROAS: 4.0x
-
 The Hill Function (Saturation) Analysis reveals:
 If we spend $1M more ($11M total), Sales increase to $40.5M.
 mROAS = ($40.5M - $40M) / $1M = `}<span className="math-result">0.5x</span>
-
 {`Channel: YouTube (Under-saturated)
 Current Spend: $5M
 Total Sales Driven: $15M
 ROAS: 3.0x
-
 If we spend $1M more ($6M total), Sales increase to $18.5M.
 mROAS = ($18.5M - $15M) / $1M = `}<span className="math-result">3.5x</span>
-
 {`Conclusion: Even though Facebook's total ROAS is higher (4.0 vs 3.0), we should move money to YouTube because its MARGINAL return is much higher (3.5 vs 0.5).`}
           </div>
         </div>
       </section>
-
       <section>
         <h2>7. Findings & Insights</h2>
         <div className="content">
@@ -139,7 +126,6 @@ mROAS = ($18.5M - $15M) / $1M = `}<span className="math-result">3.5x</span>
           </div>
         </div>
       </section>
-
       <section>
         <h2>8. Recommendations</h2>
         <div className="content">
@@ -154,7 +140,6 @@ mROAS = ($18.5M - $15M) / $1M = `}<span className="math-result">3.5x</span>
           </ul>
         </div>
       </section>
-
       <section>
         <h2>9. Business Decision-Making</h2>
         <div className="content">
@@ -165,7 +150,6 @@ mROAS = ($18.5M - $15M) / $1M = `}<span className="math-result">3.5x</span>
           </ol>
         </div>
       </section>
-
       <section>
         <h2>10. Professional Analyst Mindset</h2>
         <div className="content">
@@ -178,5 +162,4 @@ mROAS = ($18.5M - $15M) / $1M = `}<span className="math-result">3.5x</span>
     </div>
   );
 };
-
 export default Case08;

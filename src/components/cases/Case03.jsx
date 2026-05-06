@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Case03 = () => {
   return (
     <div className="case-study">
@@ -8,7 +6,6 @@ const Case03 = () => {
         <h1>The Empty Shelf Syndrome</h1>
         <div className="case-meta">Industry: Retail / Supply Chain &bull; Level: Intermediate</div>
       </header>
-
       <section>
         <h2>1. Business Background</h2>
         <div className="content">
@@ -21,7 +18,6 @@ const Case03 = () => {
           </div>
         </div>
       </section>
-
       <section>
         <h2>2. Business Problem</h2>
         <div className="content">
@@ -35,7 +31,6 @@ const Case03 = () => {
           </ul>
         </div>
       </section>
-
       <section>
         <h2>3. Analytics Objective</h2>
         <div className="content">
@@ -52,7 +47,6 @@ const Case03 = () => {
           </div>
         </div>
       </section>
-
       <section>
         <h2>4. Data Perspective</h2>
         <div className="content">
@@ -68,7 +62,6 @@ const Case03 = () => {
               <tr><td><strong>Loyalty Program</strong></td><td>Customer ID, Basket Composition, Visit Frequency</td><td>Halo Effect — basket abandonment on stockouts</td><td>Transaction-level</td></tr>
             </tbody>
           </table>
-
           <p style={{marginTop: '20px'}}><strong>Sample POS Data — Organic Avocado (Store #12, Last 10 Days):</strong></p>
           <table className="data-table">
             <thead>
@@ -100,7 +93,6 @@ const Case03 = () => {
           </div>
         </div>
       </section>
-
       <section>
         <h2>5. Step-by-Step Analytical Thinking</h2>
         <div className="content">
@@ -116,12 +108,10 @@ Class │ Criteria                    │ SKU %  │ Revenue % │ OSA Target
   B   │ Next 20% SKUs               │  20%  │   25%     │  95.0%
   C   │ Bottom 70% SKUs             │  70%  │   10%     │  85.0%
 ─────────────────────────────────────────────────────────────────
-
 Examples:
 Class A: Whole Milk 1L, Organic Eggs 12pk, Sourdough Bread
 Class B: Greek Yogurt 500g, Cheddar Block 400g
 Class C: Specialty Tahini, Organic Turmeric Powder
-
 Priority Rule: We only build probabilistic safety stock models
 for Class A SKUs first. Class C can use simple FRP — the 
 analytical ROI doesn't justify the complexity.`}
@@ -143,10 +133,8 @@ analytical ROI doesn't justify the complexity.`}
 3 days: 25% of orders
 4 days:  6% of orders
 5 days:  2% of orders
-
 Avg Lead Time (μLT) = 2.21 days
 StdDev Lead Time (σLT) = 0.82 days
-
 Ignoring this variance is why the simple formula
 gives us 12 units of safety stock when we actually need 35.`}
               </div>
@@ -169,7 +157,6 @@ gives us 12 units of safety stock when we actually need 35.`}
           </ol>
         </div>
       </section>
-
       <section>
         <h2>6. Calculation &amp; Simulation</h2>
         <div className="content">
@@ -181,7 +168,6 @@ StdDev of Demand (σD): 5 units
 Avg Lead Time (μLT): 2 days
 StdDev of Lead Time (σLT): 0.82 days
 Service Level Target: 95% → Z-score = 1.645
-
 SIMPLE FORMULA (what FreshMart currently uses):
 SS_simple = Z × σD × √μLT
 SS_simple = 1.645 × 5 × √2 = 1.645 × 5 × 1.414 = `}<span className="math-result">11.6 → 12 units</span>
@@ -198,7 +184,6 @@ At $12/unit cost: holding cost increase = $216/SKU/cycle
 vs. stockout cost ($85 basket × 15% abandonment × avg 3 stockout events/month) = `}<span className="math-result">$38.25/event</span>
 {`
 Verdict: The extra safety stock EASILY pays for itself.
-
 ─────────────────────────────────────────────────────────────────
 HALO EFFECT CALCULATION — True Stockout Cost
 ─────────────────────────────────────────────────────────────────
@@ -207,17 +192,14 @@ Item Price: $25
 Avg Basket Value when buying steak: $120
 Stockout Frequency: ~1.5 days/month (5% of days)
 Units lost per stockout day: 20 units
-
 Loss without Halo Effect (direct):
 20 units × $25 × 1.5 days = $750/month
-
 Loss WITH Halo Effect (15% basket abandonment):
 $750 + (15% × 20 × $120 × 1.5) = $750 + $540 = `}<span className="math-result">$1,290/month</span>
 {`
 The hidden basket abandonment cost ($540) is nearly
 as large as the direct lost sales ($750).
 This completely changes the safety stock business case.
-
 ─────────────────────────────────────────────────────────────────
 SENSITIVITY: What if abandonment rate is only 8% (conservative)?
 ─────────────────────────────────────────────────────────────────
@@ -227,7 +209,6 @@ The business case for higher safety stock holds in all scenarios.`}
           </div>
         </div>
       </section>
-
       <section>
         <h2>7. Findings &amp; Insights</h2>
         <div className="content">
@@ -264,7 +245,6 @@ The business case for higher safety stock holds in all scenarios.`}
           </ul>
         </div>
       </section>
-
       <section>
         <h2>8. Recommendations</h2>
         <div className="content">
@@ -294,7 +274,6 @@ The business case for higher safety stock holds in all scenarios.`}
           </div>
         </div>
       </section>
-
       <section>
         <h2>9. Business Decision-Making</h2>
         <div className="content">
@@ -321,7 +300,6 @@ The business case for higher safety stock holds in all scenarios.`}
           </div>
         </div>
       </section>
-
       <section>
         <h2>10. Professional Analyst Mindset</h2>
         <div className="content">
@@ -340,5 +318,4 @@ The business case for higher safety stock holds in all scenarios.`}
     </div>
   );
 };
-
 export default Case03;

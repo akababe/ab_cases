@@ -1,17 +1,66 @@
-# React + Vite
+# Analytics Case Hub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Analytics Case Hub is a React + Vite application for exploring a set of analytics case studies. It includes responsive navigation, search, dark mode, scroll progress, smooth transitions, and accessibility improvements.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Keyboard navigation with `←` `→`, `j` `k`, `Ctrl+K`, `Ctrl+D`, and `Shift+?`
+- Real-time search and filtering across case titles
+- Dark mode with system preference detection and localStorage persistence
+- Scroll progress bar that tracks reading position
+- Smooth page transitions and staggered section reveals
+- Mobile-friendly drawer sidebar and top navigation bar
+- Accessible controls with ARIA labels and focus-visible states
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Install dependencies
 
-## Expanding the ESLint configuration
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# Practical AB Cases
+### Start the dev server
+
+```bash
+npm run dev
+```
+
+### Build for production
+
+```bash
+npm run build
+```
+
+### Preview the production build
+
+```bash
+npm run preview
+```
+
+## Keyboard Shortcuts
+
+| Shortcut | Action |
+| --- | --- |
+| `←` / `→` | Previous or next case |
+| `j` / `k` | Previous or next case |
+| `/` / `Ctrl+K` | Focus search |
+| `Ctrl+D` | Toggle dark mode |
+| `Shift+?` | Show keyboard help |
+
+## Project Structure
+
+- `src/App.jsx` - Main app shell and interactive logic
+- `src/App.css` - Theme, layout, animation, and responsive styles
+- `src/components/cases/` - Individual case study content
+- `INTERACTIVE_FEATURES.md` - Detailed feature guide for end users
+
+## Deployment
+
+The project is configured for GitHub Pages deployment through GitHub Actions. The Vite build output uses the `/ab_cases/` base path so assets resolve correctly in production.
+
+## Notes
+
+- The app supports both desktop and mobile layouts.
+- Search input state is shared between the desktop sidebar and the mobile top bar.
+- Theme preference is stored locally so the selected mode persists across visits.

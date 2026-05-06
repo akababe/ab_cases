@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Case09 = () => {
   return (
     <div className="case-study">
@@ -8,7 +6,6 @@ const Case09 = () => {
         <h1>The Ghost User Syndrome</h1>
         <div className="case-meta">Industry: SaaS / Technology &bull; Level: Intermediate</div>
       </header>
-
       <section>
         <h2>1. Business Background</h2>
         <div className="content">
@@ -20,7 +17,6 @@ const Case09 = () => {
           </div>
         </div>
       </section>
-
       <section>
         <h2>2. Business Problem</h2>
         <div className="content">
@@ -33,7 +29,6 @@ const Case09 = () => {
           </ul>
         </div>
       </section>
-
       <section>
         <h2>3. Analytics Objective</h2>
         <div className="content">
@@ -48,7 +43,6 @@ const Case09 = () => {
           </div>
         </div>
       </section>
-
       <section>
         <h2>4. Data Perspective</h2>
         <div className="content">
@@ -86,7 +80,6 @@ const Case09 = () => {
           </table>
         </div>
       </section>
-
       <section>
         <h2>5. Step-by-Step Analytical Thinking</h2>
         <div className="content">
@@ -98,7 +91,6 @@ const Case09 = () => {
           </ol>
         </div>
       </section>
-
       <section>
         <h2>6. Calculation & Simulation</h2>
         <div className="content">
@@ -107,15 +99,12 @@ const Case09 = () => {
 {`Average Revenue Per User (ARPU): $50/month
 Avg Life of a Non-Ghost User: 24 months
 LTV of 'Healthy' User: $50 * 24 = $1,200
-
 LTV of a 'Ghost' User (churns at Month 6): $50 * 6 = $300
 LTV Gap: $900 per user
-
 Scenario:
 Risk Engine flags 1,000 'Ghost' users at Month 4.
 Customer Success (CS) Team spends $20 per user on a 'Re-engagement' webinar/call.
 CS success rate: 20% (200 users saved and restored to 24-month lifespan).
-
 Total Cost: 1,000 * $20 = $20,000
 Total Value Gained: 200 saved users * $900 gap = $180,000
 Net Profit: `}<span className="math-result">$160,000</span>
@@ -123,7 +112,6 @@ Net Profit: `}<span className="math-result">$160,000</span>
           </div>
         </div>
       </section>
-
       <section>
         <h2>7. Findings & Insights</h2>
         <div className="content">
@@ -136,7 +124,6 @@ Net Profit: `}<span className="math-result">$160,000</span>
           </div>
         </div>
       </section>
-
       <section>
         <h2>8. Recommendations</h2>
         <div className="content">
@@ -152,7 +139,6 @@ Net Profit: `}<span className="math-result">$160,000</span>
           </ul>
         </div>
       </section>
-
       <section>
         <h2>9. Business Decision-Making</h2>
         <div className="content">
@@ -163,7 +149,6 @@ Net Profit: `}<span className="math-result">$160,000</span>
           </ol>
         </div>
       </section>
-
       <section>
         <h2>10. Professional Analyst Mindset</h2>
         <div className="content">
@@ -176,5 +161,4 @@ Net Profit: `}<span className="math-result">$160,000</span>
     </div>
   );
 };
-
 export default Case09;

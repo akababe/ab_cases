@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Case07 = () => {
   return (
     <div className="case-study">
@@ -8,7 +6,6 @@ const Case07 = () => {
         <h1>The 30-Day Revolving Door</h1>
         <div className="case-meta">Industry: Healthcare / Insurance &bull; Level: Advanced</div>
       </header>
-
       <section>
         <h2>1. Business Background</h2>
         <div className="content">
@@ -20,7 +17,6 @@ const Case07 = () => {
           </div>
         </div>
       </section>
-
       <section>
         <h2>2. Business Problem</h2>
         <div className="content">
@@ -33,7 +29,6 @@ const Case07 = () => {
           </ul>
         </div>
       </section>
-
       <section>
         <h2>3. Analytics Objective</h2>
         <div className="content">
@@ -48,7 +43,6 @@ const Case07 = () => {
           </div>
         </div>
       </section>
-
       <section>
         <h2>4. Data Perspective</h2>
         <div className="content">
@@ -86,7 +80,6 @@ const Case07 = () => {
           </table>
         </div>
       </section>
-
       <section>
         <h2>5. Step-by-Step Analytical Thinking</h2>
         <div className="content">
@@ -104,7 +97,6 @@ const Case07 = () => {
           </ol>
         </div>
       </section>
-
       <section>
         <h2>6. Calculation & Simulation</h2>
         <div className="content">
@@ -114,15 +106,12 @@ const Case07 = () => {
 Current Readmission Rate: 18% (360 patients)
 Cost per Readmission: $15,000
 Total Annual Cost: 360 * $15,000 = $5,400,000
-
 Proposed Intervention (Top 10% - 200 High-Risk Patients):
 Intervention Cost: $1,500 per patient (Home visit + Pharmacy consult)
 Total Program Cost: 200 * $1,500 = $300,000
-
 Expected Outcome:
 The 200 high-risk patients normally account for 50% of readmissions (180 readmissions).
 Program reduces their readmissions by 30% (54 readmissions avoided).
-
 Savings Calculation:
 Avoided Costs: 54 * $15,000 = `}<span className="math-result">$810,000</span>
 {`Net Savings: $810,000 - $300,000 = `}<span className="math-result">$510,000</span>
@@ -131,7 +120,6 @@ Avoided Costs: 54 * $15,000 = `}<span className="math-result">$810,000</span>
           <p><em>Interpretation:</em> By spending $300k on the most vulnerable patients, the hospital saves over $800k in penalties and unreimbursed costs, while significantly improving patient quality of life.</p>
         </div>
       </section>
-
       <section>
         <h2>7. Findings & Insights</h2>
         <div className="content">
@@ -144,7 +132,6 @@ Avoided Costs: 54 * $15,000 = `}<span className="math-result">$810,000</span>
           </div>
         </div>
       </section>
-
       <section>
         <h2>8. Recommendations</h2>
         <div className="content">
@@ -160,7 +147,6 @@ Avoided Costs: 54 * $15,000 = `}<span className="math-result">$810,000</span>
           </ul>
         </div>
       </section>
-
       <section>
         <h2>9. Business Decision-Making</h2>
         <div className="content">
@@ -171,7 +157,6 @@ Avoided Costs: 54 * $15,000 = `}<span className="math-result">$810,000</span>
           </ol>
         </div>
       </section>
-
       <section>
         <h2>10. Professional Analyst Mindset</h2>
         <div className="content">
@@ -184,5 +169,4 @@ Avoided Costs: 54 * $15,000 = `}<span className="math-result">$810,000</span>
     </div>
   );
 };
-
 export default Case07;

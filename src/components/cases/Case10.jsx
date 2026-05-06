@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Case10 = () => {
   return (
     <div className="case-study">
@@ -8,7 +6,6 @@ const Case10 = () => {
         <h1>The Hidden Links in the Basket</h1>
         <div className="case-meta">Industry: Retail / Supermarkets &bull; Level: Intermediate</div>
       </header>
-
       <section>
         <h2>1. Business Background</h2>
         <div className="content">
@@ -20,7 +17,6 @@ const Case10 = () => {
           </div>
         </div>
       </section>
-
       <section>
         <h2>2. Business Problem</h2>
         <div className="content">
@@ -33,7 +29,6 @@ const Case10 = () => {
           </ul>
         </div>
       </section>
-
       <section>
         <h2>3. Analytics Objective</h2>
         <div className="content">
@@ -48,7 +43,6 @@ const Case10 = () => {
           </div>
         </div>
       </section>
-
       <section>
         <h2>4. Data Perspective</h2>
         <div className="content">
@@ -86,7 +80,6 @@ const Case10 = () => {
           </table>
         </div>
       </section>
-
       <section>
         <h2>5. Step-by-Step Analytical Thinking</h2>
         <div className="content">
@@ -104,7 +97,6 @@ const Case10 = () => {
           </ol>
         </div>
       </section>
-
       <section>
         <h2>6. Calculation & Simulation</h2>
         <div className="content">
@@ -114,19 +106,15 @@ const Case10 = () => {
 Transactions with Pasta: 10,000 (10% Support)
 Transactions with Wine: 5,000 (5% Support)
 Transactions with BOTH: 2,000 (2% Support)
-
 Confidence (Pasta -> Wine):
 P(Wine | Pasta) = (Both) / (Pasta) = 2,000 / 10,000 = `}<span className="math-result">20%</span>
-
 {`Lift (Pasta -> Wine):
 Lift = Confidence / P(Wine) = 0.20 / 0.05 = `}<span className="math-result">4.0</span>
-
 {`Interpretation: A customer buying pasta is 4 times MORE likely to buy wine than a random customer. 
 This is a very strong "Meal-based" association.`}
           </div>
         </div>
       </section>
-
       <section>
         <h2>7. Findings & Insights</h2>
         <div className="content">
@@ -139,7 +127,6 @@ This is a very strong "Meal-based" association.`}
           </div>
         </div>
       </section>
-
       <section>
         <h2>8. Recommendations</h2>
         <div className="content">
@@ -155,7 +142,6 @@ This is a very strong "Meal-based" association.`}
           </ul>
         </div>
       </section>
-
       <section>
         <h2>9. Business Decision-Making</h2>
         <div className="content">
@@ -166,7 +152,6 @@ This is a very strong "Meal-based" association.`}
           </ol>
         </div>
       </section>
-
       <section>
         <h2>10. Professional Analyst Mindset</h2>
         <div className="content">
@@ -179,5 +164,4 @@ This is a very strong "Meal-based" association.`}
     </div>
   );
 };
-
 export default Case10;

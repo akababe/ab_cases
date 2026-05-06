@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Case02 = () => {
   return (
     <div className="case-study">
@@ -8,7 +6,6 @@ const Case02 = () => {
         <h1>The Digital Lending Dilemma</h1>
         <div className="case-meta">Industry: Banking / FinTech &bull; Level: Advanced</div>
       </header>
-
       <section>
         <h2>1. Business Background</h2>
         <div className="content">
@@ -21,7 +18,6 @@ const Case02 = () => {
           </div>
         </div>
       </section>
-
       <section>
         <h2>2. Business Problem</h2>
         <div className="content">
@@ -34,7 +30,6 @@ const Case02 = () => {
           </ul>
         </div>
       </section>
-
       <section>
         <h2>3. Analytics Objective</h2>
         <div className="content">
@@ -51,7 +46,6 @@ const Case02 = () => {
           </div>
         </div>
       </section>
-
       <section>
         <h2>4. Data Perspective</h2>
         <div className="content">
@@ -98,7 +92,6 @@ const Case02 = () => {
               </tr>
             </tbody>
           </table>
-
           <p style={{marginTop: '20px'}}><strong>Sample Applicant Data (8 cases):</strong></p>
           <table className="data-table">
             <thead>
@@ -133,7 +126,6 @@ const Case02 = () => {
           </div>
         </div>
       </section>
-
       <section>
         <h2>5. Step-by-Step Analytical Thinking</h2>
         <div className="content">
@@ -143,13 +135,10 @@ const Case02 = () => {
               <div className="calculation" style={{margin: '15px 0'}}>
 {`Portfolio NPL Decomposition:
 Total NPL: 7.2% of $200M portfolio = $14.4M in bad loans
-
 Source A — Fraud: 8% NPL on approved loans
   Fraud accounts: ~800 loans × $500 avg = $400K/month losses
-
 Source B — Thin-File Defaults: 12% NPL on expanded approvals
   Thin-file accounts: 5,000 loans × $600 avg × 12% = $360K/month
-
 Action: These require TWO separate models, not one.`}
               </div>
             </li>
@@ -205,7 +194,6 @@ for predictive power AND bias impact before inclusion.`}
           </ol>
         </div>
       </section>
-
       <section>
         <h2>6. Calculation &amp; Simulation</h2>
         <div className="content">
@@ -213,7 +201,6 @@ for predictive power AND bias impact before inclusion.`}
           <div className="calculation">
 {`Portfolio Size: 50,000 Applicants/month
 Avg Loan Amount: $1,000 | Interest Rate: 15% ($150 revenue/good loan)
-
 ─────────────────────────────────────────────────────────────────
 MODEL A: Traditional Strict (Current State)
 ─────────────────────────────────────────────────────────────────
@@ -229,7 +216,6 @@ MODEL B: Hybrid Model (Proposed)
 ─────────────────────────────────────────────────────────────────
 Fraud Layer catches 92% of fraud (vs. 65% current):
 Fraud losses reduced: saves ~$140,000/month
-
 Credit Layer expands approvals:
 Approval Rate: 65% → 32,500 loans approved
 Default Rate: 4.5% → 1,463 defaults
@@ -252,7 +238,6 @@ One-time build cost ($400k): recovered in `}<span className="math-result">Month 
           <p><em>Key Interpretation:</em> Even though the default rate more than doubles (2% → 4.5%), the massive volume expansion and fraud savings create a net positive that <strong>dwarfs the increased credit losses.</strong> This is a core senior-analyst insight: risk management is not about minimizing defaults — it's about maximizing <strong>risk-adjusted profit</strong>.</p>
         </div>
       </section>
-
       <section>
         <h2>7. Findings &amp; Insights</h2>
         <div className="content">
@@ -289,7 +274,6 @@ One-time build cost ($400k): recovered in `}<span className="math-result">Month 
           </ul>
         </div>
       </section>
-
       <section>
         <h2>8. Recommendations</h2>
         <div className="content">
@@ -303,7 +287,6 @@ One-time build cost ($400k): recovered in `}<span className="math-result">Month 
             <li><strong>Deploy Micro-Lending Ladders (Credit Building Track):</strong> Thin-file customers start with a $100 limit. If they repay on time for 3 months, the limit doubles. This minimizes Exposure at Default while building a repayment track record. <br /><strong>Expected Impact:</strong> Reduce thin-file default rate from 12% to 6% by Month 6. <br /><strong>Strategic Benefit:</strong> Creates a pipeline of creditworthy borrowers with 12-month repayment history — eventually bankable at full FICO rates.</li>
             <li><strong>Data Partnership for Rent Payment Data</strong> (e.g., integration with major rental platforms). <br /><strong>Expected Impact:</strong> Improves ACS model AUC from 0.78 to an estimated 0.83. <br /><strong>Cost:</strong> $15,000/month data licensing. <strong>Payback:</strong> ~3 months.</li>
           </ul>
-
           <div className="highlight-box" style={{marginTop: '20px'}}>
             <strong>Priority Matrix (Impact × Effort):</strong>
             <table className="data-table">
@@ -321,7 +304,6 @@ One-time build cost ($400k): recovered in `}<span className="math-result">Month 
           </div>
         </div>
       </section>
-
       <section>
         <h2>9. Business Decision-Making</h2>
         <div className="content">
@@ -331,7 +313,6 @@ One-time build cost ($400k): recovered in `}<span className="math-result">Month 
             <li><strong>Yellow Tier (ACS 50–74):</strong> Moderate signals. Approved up to $300 at 18% with mandatory Micro-Lending Ladder enrollment. The first loan is essentially a creditworthiness test.</li>
             <li><strong>Red Tier (ACS below 50 or fraud flag):</strong> Decline with a clear explanation. <em>Important:</em> Provide declined applicants with a "path to approval" — e.g., "Return in 6 months after 6 consecutive utility payments." This reduces regulatory complaints and builds long-term customer relationships.</li>
           </ol>
-
           <div className="highlight-box" style={{marginTop: '20px'}}>
             <strong>Monitoring Dashboard — Weekly KPIs:</strong>
             <table className="data-table">
@@ -347,35 +328,28 @@ One-time build cost ($400k): recovered in `}<span className="math-result">Month 
               </tbody>
             </table>
           </div>
-
           <p style={{marginTop: '15px'}}><strong>Alternative Strategy Rejected:</strong> The Head of Digital Products proposed a blanket 70% approval rate with a 25% interest rate to "price in the risk." The CRO rejected this — high-interest loans to borderline borrowers have a well-documented failure mode: the interest burden itself triggers default. Risk-based pricing works; predatory pricing accelerates losses.</p>
         </div>
       </section>
-
       <section>
         <h2>10. Professional Analyst Mindset</h2>
         <div className="content">
           <p><strong>Senior Perspective:</strong> In banking, analytics isn't just about accuracy (AUC/ROC) — it's about the <strong>Economic Trade-off</strong>. A model that is "too safe" kills the business by rejecting profitable customers. A model that is "too aggressive" kills it with defaults and regulatory penalties. The senior analyst finds the profit-maximizing point within regulatory constraints, not the accuracy-maximizing point in isolation.</p>
-
           <div className="highlight-box">
             <strong>Key Lesson:</strong> When you lack traditional data, <strong>Proxy Data</strong> (mobile stability, payment behavior) is your best friend. But never forget: (1) fraudsters study your proxies and adapt, and (2) proxies may inadvertently encode demographic bias. The best alternative credit models are the ones that are both <em>predictive</em> and <em>fair</em> — and you need to audit for both simultaneously.
           </div>
-
           <div className="highlight-box" style={{marginTop: '20px'}}>
             <strong>Common Beginner Mistake:</strong> Beginners optimize for AUC (model accuracy). Seniors optimize for <strong>Expected Net Value (ENV)</strong>:
             <div className="calculation" style={{marginTop: '10px'}}>
 {`ENV = P(Good Loan) × Revenue - P(Default) × Loan Amount - Model Cost
-
 A model with AUC = 0.90 that only approves 20% of applicants
 may generate LESS profit than a model with AUC = 0.75 that
 safely approves 60%.
-
 Always translate model performance into business P&L.
 Never present AUC to a banker — they don't know what it means.
 Present: "We correctly identify 85 out of 100 future defaulters."`}
             </div>
           </div>
-
           <div className="highlight-box" style={{marginTop: '20px'}}>
             <strong>Interview-Ready Insight:</strong> If asked "How would you build a credit model for unbanked customers?" the winning answer structure is: <em>"First, separate the fraud problem from the credit problem — they require different data and different models. Second, identify alternative data sources that are predictive, available, and legally compliant. Third, define the approval threshold not by minimizing defaults but by maximizing risk-adjusted profit. Fourth, audit every variable for ECOA disparate impact before deployment. This is not optional — it is the difference between a model and a lawsuit."</em>
           </div>
@@ -384,5 +358,4 @@ Present: "We correctly identify 85 out of 100 future defaulters."`}
     </div>
   );
 };
-
 export default Case02;

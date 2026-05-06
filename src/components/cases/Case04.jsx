@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Case04 = () => {
   return (
     <div className="case-study">
@@ -8,7 +6,6 @@ const Case04 = () => {
         <h1>The One-Size-Fits-None Trap</h1>
         <div className="case-meta">Industry: Retail / E-commerce &bull; Level: Beginner to Intermediate</div>
       </header>
-
       <section>
         <h2>1. Business Background</h2>
         <div className="content">
@@ -21,7 +18,6 @@ const Case04 = () => {
           </div>
         </div>
       </section>
-
       <section>
         <h2>2. Business Problem</h2>
         <div className="content">
@@ -40,7 +36,6 @@ const Case04 = () => {
           </ul>
         </div>
       </section>
-
       <section>
         <h2>3. Analytics Objective</h2>
         <div className="content">
@@ -57,7 +52,6 @@ const Case04 = () => {
           </div>
         </div>
       </section>
-
       <section>
         <h2>4. Data Perspective</h2>
         <div className="content">
@@ -73,23 +67,19 @@ const Case04 = () => {
               <tr><td><strong>Contextual</strong></td><td><code>fav_category</code>, <code>channel</code></td><td>Last 24 months</td><td>Used for personalization</td></tr>
             </tbody>
           </table>
-
           <p style={{marginTop: '20px'}}><strong>How RFM Scores Are Assigned — Quintile Method:</strong></p>
           <div className="calculation" style={{margin: '10px 0'}}>
 {`Step 1: Sort all 200,000 customers by each dimension.
 Step 2: Divide into 5 equal groups (quintiles) of 40,000 customers each.
 Step 3: Assign score 5 to top quintile, 1 to bottom quintile.
-
 Example — Recency (R) Score Assignment:
 Quintile 5 (score=5): Purchased 0–14 days ago   → 40,000 customers
 Quintile 4 (score=4): Purchased 15–45 days ago  → 40,000 customers
 Quintile 3 (score=3): Purchased 46–120 days ago → 40,000 customers
 Quintile 2 (score=2): Purchased 121–365 days    → 40,000 customers
 Quintile 1 (score=1): Purchased 366+ days ago   → 40,000 customers
-
 Note: Thresholds are DATA-DRIVEN (quintiles), not arbitrarily chosen.`}
           </div>
-
           <p style={{marginTop: '20px'}}><strong>Sample RFM Customer Profiles (8 customers):</strong></p>
           <table className="data-table">
             <thead>
@@ -106,7 +96,6 @@ Note: Thresholds are DATA-DRIVEN (quintiles), not arbitrarily chosen.`}
               <tr><td>C008</td><td>380 days ago</td><td>8</td><td>$4,600</td><td>1</td><td>3</td><td>4</td><td>134</td><td>Lost High-Value</td></tr>
             </tbody>
           </table>
-
           <div className="highlight-box" style={{marginTop: '15px'}}>
             <strong>Data Limitations &amp; Hidden Variables:</strong>
             <ul>
@@ -117,7 +106,6 @@ Note: Thresholds are DATA-DRIVEN (quintiles), not arbitrarily chosen.`}
           </div>
         </div>
       </section>
-
       <section>
         <h2>5. Step-by-Step Analytical Thinking</h2>
         <div className="content">
@@ -130,7 +118,6 @@ Top 5% customers  (10,000): 60% of revenue → $57M
 Top 10% customers (20,000): 75% of revenue → $71M
 Top 20% customers (40,000): 88% of revenue → $83.6M
 Bottom 50% customers:        4% of revenue → $3.8M
-
 Verdict: Pareto is confirmed and extreme.
 The bottom 100,000 customers generate less than $4M total.
 This validates RFM as the right analytical lens.`}
@@ -179,7 +166,6 @@ Lost High-Value    │ R≤2,F≥3,M≥4  │ 5,800  │ 2%
           </ol>
         </div>
       </section>
-
       <section>
         <h2>6. Calculation &amp; Simulation</h2>
         <div className="content">
@@ -195,12 +181,10 @@ True incremental revenue: $25,500
 Margin destroyed by unnecessary discounts: $85,000 × 15% × 70% = `}<span className="math-result">$8,925 wasted</span>
 {`
 TARGETED STRATEGY (3 Segments Only):
-
 1. Champions (8,200 users) — Early Access, NO discount:
    Conv Rate: 14%, Full-Price AOV: $280
    Revenue: 8,200 × 14% × $280 = `}<span className="math-result">$321,440</span>
 {`   Margin impact vs. blast: ZERO discount erosion on top customers
-
 2. At Risk (22,000 users) — 25% win-back discount:
    Conv Rate: 4%, AOV after discount: $95
    Revenue: 22,000 × 4% × $95 = `}<span className="math-result">$83,600</span>
@@ -211,16 +195,13 @@ TARGETED STRATEGY (3 Segments Only):
 {`
 TARGETED TOTAL: $640,390 from 48,200 customers (48% of list)
 BLAST TOTAL: $85,000 from 100,000 customers (full list)
-
 Difference: `}<span className="math-result">+$555,390 more revenue with targeted approach</span>
 {`
-
 WHY IS TARGETED MUCH HIGHER?
 The blast uses a $100 AOV assumption — the average across ALL customers.
 Champions actually spend $280 AOV. By NOT discounting them, we keep
 their full-price behavior intact AND their conversion rate is 14x higher
 than the blast's 1% average conversion on disengaged customers.
-
 12-MONTH LTV IMPACT — Champion Protection:
 Champion who gets 15% blast discount every week:
   → Trains them to wait for sales
@@ -232,7 +213,6 @@ This is the number that wins the boardroom argument.`}
           </div>
         </div>
       </section>
-
       <section>
         <h2>7. Findings &amp; Insights</h2>
         <div className="content">
@@ -269,7 +249,6 @@ This is the number that wins the boardroom argument.`}
           </ul>
         </div>
       </section>
-
       <section>
         <h2>8. Recommendations</h2>
         <div className="content">
@@ -299,7 +278,6 @@ This is the number that wins the boardroom argument.`}
           </div>
         </div>
       </section>
-
       <section>
         <h2>9. Business Decision-Making</h2>
         <div className="content">
@@ -326,7 +304,6 @@ This is the number that wins the boardroom argument.`}
           </div>
         </div>
       </section>
-
       <section>
         <h2>10. Professional Analyst Mindset</h2>
         <div className="content">
@@ -345,5 +322,4 @@ This is the number that wins the boardroom argument.`}
     </div>
   );
 };
-
 export default Case04;

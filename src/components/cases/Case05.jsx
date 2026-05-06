@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Case05 = () => {
   return (
     <div className="case-study">
@@ -8,7 +6,6 @@ const Case05 = () => {
         <h1>The Yield Management Race</h1>
         <div className="case-meta">Industry: Hospitality / Travel &bull; Level: Advanced</div>
       </header>
-
       <section>
         <h2>1. Business Background</h2>
         <div className="content">
@@ -21,7 +18,6 @@ const Case05 = () => {
           </div>
         </div>
       </section>
-
       <section>
         <h2>2. Business Problem</h2>
         <div className="content">
@@ -34,7 +30,6 @@ const Case05 = () => {
           </ul>
         </div>
       </section>
-
       <section>
         <h2>3. Analytics Objective</h2>
         <div className="content">
@@ -51,7 +46,6 @@ const Case05 = () => {
           </div>
         </div>
       </section>
-
       <section>
         <h2>4. Data Perspective</h2>
         <div className="content">
@@ -67,7 +61,6 @@ const Case05 = () => {
               <tr><td><strong>Channel Data</strong></td><td>OTA commission rates, direct booking conversion, loyalty rate requests</td><td>Net-RevPAR optimization</td><td>Monthly</td></tr>
             </tbody>
           </table>
-
           <p style={{marginTop: '20px'}}><strong>Sample Booking Pace Data — Next 30 Days (Snapshot as of Day 0):</strong></p>
           <table className="data-table">
             <thead>
@@ -82,7 +75,6 @@ const Case05 = () => {
               <tr><td>Sat May 17</td><td>Local festival</td><td>74/100</td><td>74%</td><td>$200</td><td>$260</td><td>🟡 Mild upside</td></tr>
             </tbody>
           </table>
-
           <div className="highlight-box" style={{marginTop: '15px'}}>
             <strong>Data Limitations:</strong>
             <ul>
@@ -92,7 +84,6 @@ const Case05 = () => {
           </div>
         </div>
       </section>
-
       <section>
         <h2>5. Step-by-Step Analytical Thinking</h2>
         <div className="content">
@@ -110,7 +101,6 @@ Days Before Arrival │ Typical Rooms Booked │ Cumulative Occupancy
    7–13 days        │       19             │      79%
     3–6 days        │       12             │      91%
     0–2 days        │        6             │      97%
-
 If by Day 30, occupancy is already at 60% (vs. typical 38%),
 we are running 22 rooms AHEAD of pace → raise prices immediately.`}
               </div>
@@ -118,17 +108,14 @@ we are running 22 rooms AHEAD of pace → raise prices immediately.`}
             <li><strong>Step 2 — Measure Price Elasticity by Segment:</strong> Not all guests respond equally to price changes. Business travelers are price-inelastic; leisure travelers are highly elastic:
               <div className="calculation" style={{margin: '12px 0'}}>
 {`Price Elasticity (Ed) = % Change in Demand / % Change in Price
-
 LEISURE SEGMENT (book 45+ days out):
 Price: $200 → $180 (-10%)  |  Occupancy: 62% → 72% (+16%)
 Ed = 16% / 10% = -1.6 (Elastic — price drop pays off)
 Revenue check: 72 × $180 = $12,960 vs 62 × $200 = $12,400 ✓
-
 BUSINESS SEGMENT (book 3–7 days out):
 Price: $200 → $180 (-10%)  |  Occupancy: 85% → 87% (+2.4%)
 Ed = 2.4% / 10% = -0.24 (Inelastic — price drop does NOT pay off)
 Revenue check: 87 × $180 = $15,660 vs 85 × $200 = $17,000 ✗
-
 Conclusion: Never discount to capture business travelers.
 Only use discounts for leisure demand when Ed > 1.0.`}
               </div>
@@ -160,7 +147,6 @@ Channel      │ Commission │ Net Revenue │ Net-RevPAR Contribution
 Direct       │   0%       │   $200      │  $200
 Booking.com  │  18%       │   $164      │  $164
 Expedia      │  22%       │   $156      │  $156
-
 At 80% occupancy: Closing Expedia and selling direct at $185
 earns MORE net revenue than selling via Expedia at $200.
 → Strategy: Close OTA channels at 80% occupancy trigger.`}
@@ -169,35 +155,29 @@ earns MORE net revenue than selling via Expedia at $200.
           </ol>
         </div>
       </section>
-
       <section>
         <h2>6. Calculation &amp; Simulation</h2>
         <div className="content">
           <p>Three scenarios: Static pricing vs. Dynamic on High-Demand vs. Dynamic on Low-Demand days.</p>
           <div className="calculation">
 {`Property: 100 Rooms
-
 SCENARIO A — STATIC PRICING (Current):
 All days at $200. Avg occupancy: 70%.
 Daily Revenue: 70 × $200 = $14,000
 RevPAR: `}<span className="math-result">$140</span>
 {`
-
 SCENARIO B — DYNAMIC PRICING (High-Demand: Marathon Weekend):
 Tier 1: First 50 rooms at $200 (early birds, 90+ days out)
 Tier 2: Next 30 rooms at $350 (mid-window, 14–30 days out)
 Tier 3: Final 15 rooms at $550 (last-minute business, 3–7 days)
 5 rooms held as strategic buffer (cancellation protection)
-
 Total Revenue: (50×$200) + (30×$350) + (15×$550)
              = $10,000 + $10,500 + $8,250 = $28,750
 RevPAR: `}<span className="math-result">$287.50 (+105% vs. static)</span>
 {`
-
 SCENARIO C — DYNAMIC PRICING (Low-Demand: Rainy Monday):
 Observation at 72hrs out: Only 28 rooms booked (28% occupancy)
 Competitor rates: $115–$130. Our rate: $180 → Overpriced.
-
 Action: Drop to $125 for direct bookings, push $130 via OTAs.
 Result: Occupancy lifts from 28% to 65% (target).
 Revenue: 65 × $125 = $8,125 (vs. static 28 × $180 = $5,040)
@@ -205,7 +185,6 @@ RevPAR: `}<span className="math-result">$81.25 vs. static $50.40 (+61%)</span>
 {`
 Key Lesson: Dynamic pricing wins in BOTH directions.
 Not just on peak days — also on slow days.
-
 ANNUAL IMPACT SIMULATION:
 Assume 120 high-demand days, 90 low-demand days, 155 normal days.
 High-demand uplift: 120 × ($287.50 - $140) = `}<span className="math-result">+$17,700/day × 120 = $2.12M</span>
@@ -214,7 +193,6 @@ High-demand uplift: 120 × ($287.50 - $140) = `}<span className="math-result">+$
           </div>
         </div>
       </section>
-
       <section>
         <h2>7. Findings &amp; Insights</h2>
         <div className="content">
@@ -251,7 +229,6 @@ High-demand uplift: 120 × ($287.50 - $140) = `}<span className="math-result">+$
           </ul>
         </div>
       </section>
-
       <section>
         <h2>8. Recommendations</h2>
         <div className="content">
@@ -281,7 +258,6 @@ High-demand uplift: 120 × ($287.50 - $140) = `}<span className="math-result">+$
           </div>
         </div>
       </section>
-
       <section>
         <h2>9. Business Decision-Making</h2>
         <div className="content">
@@ -308,7 +284,6 @@ High-demand uplift: 120 × ($287.50 - $140) = `}<span className="math-result">+$
           </div>
         </div>
       </section>
-
       <section>
         <h2>10. Professional Analyst Mindset</h2>
         <div className="content">
@@ -327,5 +302,4 @@ High-demand uplift: 120 × ($287.50 - $140) = `}<span className="math-result">+$
     </div>
   );
 };
-
 export default Case05;

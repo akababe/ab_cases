@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Case01 = () => {
   return (
     <div className="case-study">
@@ -8,7 +6,6 @@ const Case01 = () => {
         <h1>The M3 Subscription Cliff</h1>
         <div className="case-meta">Industry: E-commerce (Subscription SaaS) &bull; Level: Intermediate</div>
       </header>
-
       <section>
         <h2>1. Business Background</h2>
         <div className="content">
@@ -21,7 +18,6 @@ const Case01 = () => {
           </div>
         </div>
       </section>
-
       <section>
         <h2>2. Business Problem</h2>
         <div className="content">
@@ -40,7 +36,6 @@ const Case01 = () => {
           </ul>
         </div>
       </section>
-
       <section>
         <h2>3. Analytics Objective</h2>
         <div className="content">
@@ -57,7 +52,6 @@ const Case01 = () => {
           </div>
         </div>
       </section>
-
       <section>
         <h2>4. Data Perspective</h2>
         <div className="content">
@@ -116,7 +110,6 @@ const Case01 = () => {
               </tr>
             </tbody>
           </table>
-
           <p style={{marginTop: '20px'}}><strong>Sample Data (10 Users):</strong></p>
           <table className="data-table">
             <thead>
@@ -144,7 +137,6 @@ const Case01 = () => {
               <tr><td>U010</td><td>Referral</td><td>Skincare</td><td>4</td><td>10</td><td>Yes</td><td>No</td><td>No</td></tr>
             </tbody>
           </table>
-
           <div className="highlight-box" style={{marginTop: '20px'}}>
             <strong>Data Limitations:</strong>
             <ul>
@@ -155,7 +147,6 @@ const Case01 = () => {
           </div>
         </div>
       </section>
-
       <section>
         <h2>5. Step-by-Step Analytical Thinking</h2>
         <div className="content">
@@ -166,7 +157,6 @@ const Case01 = () => {
 {`Customer Lifecycle Funnel:
 Signup (10,000) → M1 Active (9,200) → M2 Active (7,800) → M3 Retained (5,500) → M4+ Profitable (5,100)
    Drop: 8%         Drop: 15%         Drop: 30% ← THE CLIFF      Drop: 7%
-
 Key Observation: The biggest drop is M2 → M3 (30%).
 But there's also a hidden "silent drop" at M1 → M2 (15%) we shouldn't ignore.`}
               </div>
@@ -218,7 +208,6 @@ Key Surprise: review_score is the WEAKEST predictor.
           </ol>
         </div>
       </section>
-
       <section>
         <h2>6. Calculation &amp; Simulation</h2>
         <div className="content">
@@ -229,11 +218,9 @@ New Monthly Subs: 10,000
 CAC: $60 | Monthly Margin: $15
 Break-even: Month 4 (CAC recovered after 4 margin payments)
 Current M3 Churn: 45% (4,500 users lost)
-
 Current State (Status Quo):
 Total Lost Margin: 4,500 × $15 = $67,500/month
 Wasted CAC: 4,500 × $60 = $270,000/month (never recovered)
-
 ─────────────────────────────────────────────────────────────
 SENSITIVITY ANALYSIS: Impact of Different Churn Reductions
 ─────────────────────────────────────────────────────────────
@@ -248,7 +235,6 @@ Intervention Cost Estimate:
 - Choice feature improvement: $15,000 one-time (dev cost)
 - Skincare-heavy M1 box shift: +$2.40/box COGS increase
   Monthly cost increase: 10,000 × $2.40 = $24,000/month
-
 Break-even Analysis:
 Even the CONSERVATIVE scenario ($30,000/month benefit)
 exceeds the intervention cost ($3,000 + $24,000 = $27,000/month).
@@ -261,7 +247,6 @@ Total annual value: `}<span className="math-result">$1,440,000</span>
           </div>
         </div>
       </section>
-
       <section>
         <h2>7. Findings &amp; Insights</h2>
         <div className="content">
@@ -302,7 +287,6 @@ Total annual value: `}<span className="math-result">$1,440,000</span>
           </ul>
         </div>
       </section>
-
       <section>
         <h2>8. Recommendations</h2>
         <div className="content">
@@ -316,7 +300,6 @@ Total annual value: `}<span className="math-result">$1,440,000</span>
             <li><strong>Action:</strong> Shift the M1 "New Member" box to be skincare-heavy rather than makeup-heavy to build routine behavior. <br /><strong>Expected Impact:</strong> Convert 20% of would-be makeup churners into routine users. <br /><strong>Risk/Tradeoff:</strong> COGS increases by $2.40/box, and makeup-preference users may feel disappointed. A/B test first with a 2,000-user pilot.</li>
             <li><strong>Action:</strong> Implement a predictive "Churn Risk" dashboard for the Customer Success team. Flag high-risk M2 users and offer targeted gifts (not discounts — discounts train customers to expect them). <br /><strong>Expected Impact:</strong> $45,000/month in retained margin at target scenario. <br /><strong>Priority:</strong> Medium | <strong>Cost:</strong> $15,000 one-time dev + $2,000/month operations.</li>
           </ul>
-
           <div className="highlight-box" style={{marginTop: '20px'}}>
             <strong>Experimentation Design (A/B Test):</strong>
             <ul>
@@ -330,7 +313,6 @@ Total annual value: `}<span className="math-result">$1,440,000</span>
           </div>
         </div>
       </section>
-
       <section>
         <h2>9. Business Decision-Making</h2>
         <div className="content">
@@ -340,7 +322,6 @@ Total annual value: `}<span className="math-result">$1,440,000</span>
             <li><strong>Product Roadmap:</strong> Prioritize an in-app "Skin Diary" feature to increase the "Switching Cost" for skincare users — making the subscription more personal and harder to abandon.</li>
             <li><strong>Alternative Strategy Considered:</strong> The Head of Retention proposed offering a "3-month commitment discount" (lock users in). The CGO rejected this because it treats the symptom (churn) not the cause (low engagement). Locked-in users who don't engage will simply churn at M6 instead of M3.</li>
           </ol>
-
           <div className="highlight-box" style={{marginTop: '20px'}}>
             <strong>Monitoring Dashboard — Weekly KPIs:</strong>
             <table className="data-table">
@@ -363,20 +344,16 @@ Total annual value: `}<span className="math-result">$1,440,000</span>
           </div>
         </div>
       </section>
-
       <section>
         <h2>10. Professional Analyst Mindset</h2>
         <div className="content">
           <p><strong>The Senior Perspective:</strong> Beginners look for "The Model." Seniors look for "The Behavior." In this case, the behavior is <em>Agency</em>. When a user chooses an item, they aren't just buying a box — they are co-creating it. This psychological ownership is the strongest retention mechanism, stronger than any discount or product quality improvement.</p>
-
           <div className="highlight-box">
             <strong>Key Lesson:</strong> Correlation is not always Causation, but in retention, <strong>Friction vs. Flow</strong> is everything. If it's too easy to forget the subscription, it's too easy to cancel it. The goal is not to make cancellation harder — it's to make engagement effortless.
           </div>
-
           <div className="highlight-box" style={{marginTop: '20px'}}>
             <strong>Common Beginner Mistake:</strong> Most beginners immediately want to build a churn prediction model (logistic regression, random forest, etc.). A senior analyst first asks: <em>"Do we even have enough data points to model?"</em> With only 90-day history, you have at most 3 observations per customer. Start with <strong>descriptive analytics</strong> (pivot tables, cohort charts, funnel visualization) — they reveal 80% of the insights. Model later, when you have 6+ months of data and a validated hypothesis to test.
           </div>
-
           <div className="highlight-box" style={{marginTop: '20px'}}>
             <strong>Interview-Ready Insight:</strong> If asked "How would you reduce churn for a subscription business?" in a consulting interview, the winning answer structure is: <em>"First, I'd map the lifecycle funnel to find WHERE churn concentrates. Then, I'd segment users to find WHO churns. Finally, I'd analyze behavioral signals to understand WHY — and design an intervention with a measurable A/B test to validate."</em> Funnel → Segment → Signal → Experiment.
           </div>
@@ -385,5 +362,4 @@ Total annual value: `}<span className="math-result">$1,440,000</span>
     </div>
   );
 };
-
 export default Case01;
