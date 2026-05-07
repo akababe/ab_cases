@@ -32,7 +32,7 @@ const cases = [
 
 function App() {
   const [activeCaseId, setActiveCaseId] = useState('case01');
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [isAnimating, setIsAnimating] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -52,7 +52,8 @@ function App() {
   const handleCaseSelect = useCallback((id) => {
     setIsAnimating(true);
     setActiveCaseId(id);
-    setIsSidebarOpen(false);
+    setIsDropdownOpen(false);
+    setSearchQuery('');
     setScrollProgress(0);
     window.scrollTo(0, 0);
     setTimeout(() => setIsAnimating(false), 300);
@@ -74,7 +75,6 @@ function App() {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.target === document.body || e.target === document.documentElement) {
-        // Arrow keys: left/right to navigate
         if (e.key === 'ArrowRight' || e.key === 'j') {
           e.preventDefault();
           const nextIndex = (currentIndex + 1) % cases.length;
@@ -83,19 +83,13 @@ function App() {
           e.preventDefault();
           const prevIndex = currentIndex === 0 ? cases.length - 1 : currentIndex - 1;
           handleCaseSelect(cases[prevIndex].id);
-        }
-        // ? key for help
-        else if (e.key === '?' && e.shiftKey) {
+        } else if (e.key === '?' && e.shiftKey) {
           e.preventDefault();
-          alert('⌨️ Keyboard Shortcuts:\n\n→ or j: Next case\n← or k: Previous case\n/ or Ctrl+K: Search\n\nTry them out!');
-        }
-        // Slash for search focus
-        else if ((e.key === '/' || (e.ctrlKey && e.key === 'k')) && !isSidebarOpen) {
+          alert('⌨️ Keyboard Shortcuts:\n\n→ or j: Next case\n← or k: Previous case\n/ or Ctrl+K: Open case search\nCtrl+D: Toggle dark mode');
+        } else if (e.key === '/' || (e.ctrlKey && e.key === 'k')) {
           e.preventDefault();
-          document.getElementById('case-search')?.focus();
-        }
-        // d key for dark mode toggle
-        else if (e.key === 'd' && e.ctrlKey && !isSidebarOpen) {
+          setIsDropdownOpen(true);
+        } else if (e.key === 'd' && e.ctrlKey) {
           setIsDarkMode((prev) => !prev);
         }
       }
@@ -103,27 +97,14 @@ function App() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [currentIndex, handleCaseSelect, isSidebarOpen]);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 1024) {
-        setIsSidebarOpen(false);
-      }
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, [currentIndex, handleCaseSelect]);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
   }, [isDarkMode]);
 
-  // Scroll Reveal Observer
+  // Scroll reveal observer
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -138,7 +119,6 @@ function App() {
       });
     }, observerOptions);
 
-    // Timeout to ensure DOM is ready after case transition
     const timer = setTimeout(() => {
       const sections = document.querySelectorAll('section');
       sections.forEach((section) => observer.observe(section));
@@ -151,84 +131,86 @@ function App() {
   }, [activeCaseId]);
 
   const activeCase = cases.find(c => c.id === activeCaseId);
+  const activeCaseLabel = activeCase
+    ? activeCase.title.split('. ').slice(1).join('. ')
+    : 'Cases';
 
   return (
     <div className="app-container" data-animating={isAnimating}>
-      <div className="scroll-progress-bar" style={{width: `${scrollProgress}%`}} />
+      <div className="scroll-progress-bar" style={{ width: `${scrollProgress}%` }} />
 
-      <header className="mobile-topbar">
-        <div style={{flex: 1}}>
-          <p className="mobile-topbar-label">Analytics Hub</p>
-          <h2>{activeCase?.title || 'Cases'}</h2>
-        </div>
-        <div className="topbar-controls">
-          <input
-            id="case-search"
-            type="text"
-            placeholder="Search cases... (/ or Ctrl+K)"
-            className="search-input"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            aria-label="Search cases"
-          />
-          <button
-            type="button"
-            className="theme-toggle"
-            onClick={() => setIsDarkMode((prev) => !prev)}
-            aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode (Ctrl+D)`}
-            title="Toggle dark mode (Ctrl+D)"
-          >
-            {isDarkMode ? '☀️' : '🌙'}
-          </button>
-          <button
-            type="button"
-            className="mobile-menu-button"
-            aria-expanded={isSidebarOpen}
-            aria-controls="case-navigation"
-            onClick={() => setIsSidebarOpen((open) => !open)}
-            title="Toggle navigation (or use ← → keys)"
-          >
-            Menu
-          </button>
+      {/* Top navigation */}
+      <header className="topnav">
+        <div className="topnav-inner">
+          <span className="brand">Analytics Hub</span>
+
+          <div className="cases-menu">
+            <button
+              className={`cases-trigger ${isDropdownOpen ? 'open' : ''}`}
+              onClick={() => setIsDropdownOpen((o) => !o)}
+              aria-haspopup="listbox"
+              aria-expanded={isDropdownOpen}
+              title="Browse cases (/ or Ctrl+K)"
+            >
+              {activeCaseLabel}
+              <span className="trigger-chevron" aria-hidden="true">▾</span>
+            </button>
+
+            {isDropdownOpen && (
+              <>
+                <div
+                  className="dropdown-overlay"
+                  onClick={() => setIsDropdownOpen(false)}
+                />
+                <div className="cases-dropdown" role="listbox">
+                  <input
+                    type="text"
+                    className="dropdown-search"
+                    placeholder="Search cases..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    autoFocus
+                    aria-label="Search cases"
+                  />
+                  {filteredCases.map((c) => {
+                    const isActive = activeCaseId === c.id;
+                    const [num, ...rest] = c.title.split('. ');
+                    return (
+                      <div
+                        key={c.id}
+                        className={`dropdown-item ${isActive ? 'active' : ''}`}
+                        onClick={() => handleCaseSelect(c.id)}
+                        role="option"
+                        aria-selected={isActive}
+                      >
+                        <span className="dropdown-num">{num}</span>
+                        <span className="dropdown-label">{rest.join('. ')}</span>
+                      </div>
+                    );
+                  })}
+                  {filteredCases.length === 0 && (
+                    <p className="dropdown-empty">No cases found</p>
+                  )}
+                </div>
+              </>
+            )}
+          </div>
+
+          <div className="nav-controls">
+            <button
+              type="button"
+              className="theme-toggle"
+              onClick={() => setIsDarkMode((prev) => !prev)}
+              aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode (Ctrl+D)`}
+              title="Toggle dark mode (Ctrl+D)"
+            >
+              {isDarkMode ? '☀️' : '🌙'}
+            </button>
+          </div>
         </div>
       </header>
 
-      <div className={`sidebar-overlay ${isSidebarOpen ? 'visible' : ''}`} onClick={() => setIsSidebarOpen(false)} />
-
-      <aside className={`sidebar ${isSidebarOpen ? 'open' : ''}`} id="case-navigation">
-        <h2>Analytics Hub</h2>
-        <div className="sidebar-search">
-          <input
-            type="text"
-            placeholder="Filter cases..."
-            className="search-input-sidebar"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            aria-label="Filter cases"
-          />
-        </div>
-        <ul className="nav-list" role="listbox">
-          {filteredCases.map((c) => {
-            const isActive = activeCaseId === c.id;
-            return (
-              <li
-                key={c.id}
-                className={`nav-item ${isActive ? 'active' : ''}`}
-                onClick={() => handleCaseSelect(c.id)}
-                role="option"
-                aria-selected={isActive}
-              >
-                {c.title}
-                {isActive && <span className="nav-item-indicator" aria-hidden="true">→</span>}
-              </li>
-            );
-          })}
-        </ul>
-        {filteredCases.length === 0 && (
-          <p className="sidebar-empty">No cases found</p>
-        )}
-      </aside>
-
+      {/* Reading column */}
       <main className="main-content" role="main">
         <div className="case-transition-wrapper" key={activeCaseId}>
           {activeCase?.component}
