@@ -10,6 +10,7 @@ import Case07 from './components/cases/Case07';
 import Case08 from './components/cases/Case08';
 import Case09 from './components/cases/Case09';
 import Case10 from './components/cases/Case10';
+import Case11 from './components/cases/Case11';
 
 const cases = [
   { id: 'case01', title: '01. Subscription Retention', component: <Case01 /> },
@@ -22,6 +23,7 @@ const cases = [
   { id: 'case08', title: '08. Marketing Mix Modeling', component: <Case08 /> },
   { id: 'case09', title: '09. SaaS Churn Prediction', component: <Case09 /> },
   { id: 'case10', title: '10. Retail Basket Analysis', component: <Case10 /> },
+  { id: 'case11', title: '11. Inventory Optimization(indo)', component: <Case11 /> },
 ];
 
 function App() {
