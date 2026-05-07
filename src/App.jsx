@@ -13,6 +13,7 @@ import Case10 from './components/cases/Case10';
 import Case11 from './components/cases/Case11';
 import Case12 from './components/cases/Case12';
 import Case13 from './components/cases/Case13';
+import Case14 from './components/cases/Case14';
 
 const cases = [
   { id: 'case01', title: '01. Subscription Retention', component: <Case01 /> },
@@ -28,6 +29,7 @@ const cases = [
   { id: 'case11', title: '11. Inventory Optimization(indo)', component: <Case11 /> },
   { id: 'case12', title: '12. Why Traditional Metrics Lie', component: <Case12 /> },
   { id: 'case13', title: '13. The Freemium Whale Trap', component: <Case13 /> },
+  { id: 'case14', title: '14. The Loyalty Illusion', component: <Case14 /> },
 ];
 
 function App() {
