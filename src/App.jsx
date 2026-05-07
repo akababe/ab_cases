@@ -11,6 +11,8 @@ import Case08 from './components/cases/Case08';
 import Case09 from './components/cases/Case09';
 import Case10 from './components/cases/Case10';
 import Case11 from './components/cases/Case11';
+import Case12 from './components/cases/Case12';
+import Case13 from './components/cases/Case13';
 
 const cases = [
   { id: 'case01', title: '01. Subscription Retention', component: <Case01 /> },
@@ -24,6 +26,8 @@ const cases = [
   { id: 'case09', title: '09. SaaS Churn Prediction', component: <Case09 /> },
   { id: 'case10', title: '10. Retail Basket Analysis', component: <Case10 /> },
   { id: 'case11', title: '11. Inventory Optimization(indo)', component: <Case11 /> },
+  { id: 'case12', title: '12. Why Traditional Metrics Lie', component: <Case12 /> },
+  { id: 'case13', title: '13. The Freemium Whale Trap', component: <Case13 /> },
 ];
 
 function App() {
