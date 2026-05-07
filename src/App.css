@@ -2,12 +2,12 @@
    CSS VARIABLES
    ========================================== */
 :root {
-  --bg: #ffffff;
+  --bg: #faf9f6;
   --surface: #f9f9f9;
   --surface-alt: #f2f2f2;
   --text: #242424;
   --secondary: #6b6b6b;
-  --accent: #1a8917;
+  --accent: #c4a484;
   --accent-strong: #156912;
   --border: #e6e6e6;
   --shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
@@ -17,7 +17,7 @@
 }
 
 html[data-theme="dark"] {
-  --bg: #1c1c1e;
+  --bg: #1a1a1a;
   --surface: #242424;
   --surface-alt: #2d2d2d;
   --text: #f2f2f2;
