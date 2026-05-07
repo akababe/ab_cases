@@ -215,9 +215,9 @@ function App() {
         <div className="case-transition-wrapper" key={activeCaseId}>
           {activeCase?.component}
         </div>
-        <footer className="app-footer">
+        {/* <footer className="app-footer">
           <p className="footer-quote">"Manjadda Wajadda"</p>
-        </footer>
+        </footer> */}
       </main>
     </div>
   );
