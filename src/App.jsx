@@ -16,6 +16,7 @@ import Case13 from './components/cases/Case13';
 import Case14 from './components/cases/Case14';
 import Case15 from './components/cases/Case15';
 import Case16 from './components/cases/Case16';
+import Case17 from './components/cases/Case17';
 
 const cases = [
   { id: 'case01', title: '01. Subscription Retention', component: <Case01 /> },
@@ -33,8 +34,8 @@ const cases = [
   { id: 'case13', title: '13. The Freemium Whale Trap', component: <Case13 /> },
   { id: 'case14', title: '14. The Loyalty Illusion', component: <Case14 /> },
   { id: 'case15', title: '15. The $2B Portfolio Pivot', component: <Case15 /> },
-  { id: 'case16', title: '16. Raw Materials Pricing', component: <Case16
-     /> },
+  { id: 'case16', title: '16. The Margin Collapse at NovaCPG', component: <Case16/> },
+  { id: 'case17', title: '17. The Profitable Customer Exodus', component: <Case17 /> },
 ];
 
 function App() {
