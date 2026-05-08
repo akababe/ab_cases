@@ -17,6 +17,7 @@ import Case14 from './components/cases/Case14';
 import Case15 from './components/cases/Case15';
 import Case16 from './components/cases/Case16';
 import Case17 from './components/cases/Case17';
+import Case18 from './components/cases/Case18';
 
 const cases = [
   { id: 'case01', title: '01. Subscription Retention', component: <Case01 /> },
@@ -36,6 +37,7 @@ const cases = [
   { id: 'case15', title: '15. The $2B Portfolio Pivot', component: <Case15 /> },
   { id: 'case16', title: '16. The Margin Collapse at NovaCPG', component: <Case16/> },
   { id: 'case17', title: '17. The Profitable Customer Exodus', component: <Case17 /> },
+  { id: 'case18', title: '18. The Last Decade of Coal', component: <Case18 /> },
 ];
 
 function App() {
